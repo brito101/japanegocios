@@ -250,7 +250,7 @@
                                         <div class="card-body p-2 border rounded">
                                             <input type="checkbox" style="cursor: pointer" id="planned_furniture"
                                                 name="planned_furniture"
-                                                {{ old('planned_furniture') == 'on' || old('planned_furniture') == true? 'checked': ($property->planned_furniture == 'on' || $property->planned_furniture == true? 'checked': '') }}>
+                                                {{ old('planned_furniture') == 'on' || old('planned_furniture') == true? 'checked': ($property->planned_furniture == 1 || $property->planned_furniture == true? 'checked': '') }}>
                                             <label for="planned_furniture" class="my-0 ml-2">Móveis Planejados</label>
                                             </label>
                                         </div>
@@ -259,7 +259,7 @@
                                         <div class="card-body p-2 border rounded">
                                             <input type="checkbox" style="cursor: pointer" id="barbecue_grill"
                                                 name="barbecue_grill"
-                                                {{ old('barbecue_grill') == 'on' || old('barbecue_grill') == true? 'checked': ($property->barbecue_grill == 'on' || $property->barbecue_grill == true? 'checked': '') }}>
+                                                {{ old('barbecue_grill') == 'on' || old('barbecue_grill') == true? 'checked': ($property->barbecue_grill == 1 || $property->barbecue_grill == true? 'checked': '') }}>
                                             <label for="barbecue_grill" class="my-0 ml-2">Churrasqueira</label>
                                             </label>
                                         </div>
@@ -268,7 +268,7 @@
                                     <div class="col-12 col-md-3 form-group px-0 pr-md-2">
                                         <div class="card-body p-2 border rounded">
                                             <input type="checkbox" style="cursor: pointer" id="wifi" name="wifi"
-                                                {{ old('wifi') == 'on' || old('wifi') == true? 'checked': ($property->wifi == 'on' || $property->wifi == true? 'checked': '') }}>
+                                                {{ old('wifi') == 'on' || old('wifi') == true? 'checked': ($property->wifi == 1 || $property->wifi == true? 'checked': '') }}>
                                             <label for="wifi" class="my-0 ml-2">Wi-Fi</label>
                                             </label>
                                         </div>
@@ -278,7 +278,7 @@
                                         <div class="card-body p-2 border rounded">
                                             <input type="checkbox" style="cursor: pointer" id="air_conditioning"
                                                 name="air_conditioning"
-                                                {{ old('air_conditioning') == 'on' || old('air_conditioning') == true? 'checked': ($property->air_conditioning == 'on' || $property->air_conditioning == true? 'checked': '') }}>
+                                                {{ old('air_conditioning') == 'on' || old('air_conditioning') == true? 'checked': ($property->air_conditioning == 1 || $property->air_conditioning == true? 'checked': '') }}>
                                             <label for="air_conditioning" class="my-0 ml-2">Ar Condicionado</label>
                                             </label>
                                         </div>
@@ -287,7 +287,7 @@
                                     <div class="col-12 col-md-3 form-group px-0 pr-md-2">
                                         <div class="card-body p-2 border rounded">
                                             <input type="checkbox" style="cursor: pointer" id="bar" name="bar"
-                                                {{ old('bar') == 'on' || old('bar') == true? 'checked': ($property->bar == 'on' || $property->bar == true? 'checked': '') }}>
+                                                {{ old('bar') == 'on' || old('bar') == true? 'checked': ($property->bar == 1 || $property->bar == true? 'checked': '') }}>
                                             <label for="bar" class="my-0 ml-2">Bar</label>
                                             </label>
                                         </div>
@@ -297,7 +297,7 @@
                                         <div class="card-body p-2 border rounded">
                                             <input type="checkbox" style="cursor: pointer" id="american_kitchen"
                                                 name="american_kitchen"
-                                                {{ old('american_kitchen') == 'on' || old('american_kitchen') == true? 'checked': ($property->planned_furniture == 'on' || $property->american_kitchen == true? 'american_kitchen': '') }}>
+                                                {{ old('american_kitchen') == 'on' || old('american_kitchen') == true? 'checked': ($property->planned_furniture == 1 || $property->american_kitchen == true? 'american_kitchen': '') }}>
                                             <label for="american_kitchen" class="my-0 ml-2">Cozinha Americana</label>
                                             </label>
                                         </div>
@@ -306,7 +306,7 @@
                                     <div class="col-12 col-md-3 form-group px-0 pr-md-2">
                                         <div class="card-body p-2 border rounded">
                                             <input type="checkbox" style="cursor: pointer" id="office" name="office"
-                                                {{ old('office') == 'on' || old('office') == true? 'checked': ($property->office == 'on' || $property->office == true? 'checked': '') }}>
+                                                {{ old('office') == 'on' || old('office') == true? 'checked': ($property->office == 1 || $property->office == true? 'checked': '') }}>
                                             <label for="office" class="my-0 ml-2">Escritório</label>
                                             </label>
                                         </div>
@@ -315,7 +315,7 @@
                                     <div class="col-12 col-md-3 form-group px-0 pr-md-2">
                                         <div class="card-body p-2 border rounded">
                                             <input type="checkbox" style="cursor: pointer" id="pool" name="pool"
-                                                {{ old('pool') == 'on' || old('pool') == true? 'checked': ($property->pool == 'on' || $property->pool == true? 'checked': '') }}>
+                                                {{ old('pool') == 'on' || old('pool') == true? 'checked': ($property->pool == 1 || $property->pool == true? 'checked': '') }}>
                                             <label for="pool" class="my-0 ml-2">Piscina</label>
                                             </label>
                                         </div>

@@ -46,18 +46,9 @@ class CreatePropertiesTable extends Migration
             $table->boolean('wifi')->nullable();
             $table->boolean('air_conditioning')->nullable();
             $table->boolean('bar')->nullable();
-            $table->boolean('library')->nullable();
             $table->boolean('american_kitchen')->nullable();
-            $table->boolean('fitted_kitchen')->nullable();
-            $table->boolean('pantry')->nullable();
-            $table->boolean('edicule')->nullable();
             $table->boolean('office')->nullable();
-            $table->boolean('bathtub')->nullable();
-            $table->boolean('fireplace')->nullable();
-            $table->boolean('lavatory')->nullable();
-            $table->boolean('furnished')->nullable();
             $table->boolean('pool')->nullable();
-            $table->boolean('steam_room')->nullable();
             /** pattern */
             $table->foreignId('user_id')
                 ->constrained()

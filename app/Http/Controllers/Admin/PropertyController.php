@@ -87,6 +87,7 @@ class PropertyController extends Controller
         if (empty($property->id)) {
             abort(403, 'Imóvel não encontrado');
         }
+
         return view('admin.properties.edit', compact('property'));
     }
 
@@ -108,6 +109,15 @@ class PropertyController extends Controller
         }
 
         $data['user_id'] = Auth::user()->id;
+
+        $data['planned_furniture'] = $request->planned_furniture == 'on' ? true : false;
+        $data['wifi'] = $request->wifi == 'on' ? true : false;
+        $data['air_conditioning'] = $request->air_conditioning == 'on' ? true : false;
+        $data['barbecue_grill'] = $request->barbecue_grill == 'on' ? true : false;
+        $data['bar'] = $request->bar == 'on' ? true : false;
+        $data['american_kitchen'] = $request->american_kitchen == 'on' ? true : false;
+        $data['office'] = $request->office == 'on' ? true : false;
+        $data['pool'] = $request->pool == 'on' ? true : false;
 
         if ($request->hasFile('photo') && $request->file('photo')->isValid()) {
             $name = Str::slug(mb_substr($data['title'], 0, 10)) . time();

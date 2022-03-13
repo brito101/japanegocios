@@ -7,18 +7,18 @@
 @section('content')
 
     @php
-    $heads = [['label' => 'ID', 'width' => 5], 'Título', 'Tipo', 'Status', 'Cidade', 'Bairro', 'Visualizações', ['label' => 'Ações', 'no-export' => true, 'width' => 10]];
+    $heads = [['label' => 'ID', 'width' => 5], 'Título', 'Tipo', 'Venda', 'Aluguel', 'Status', 'Cidade', 'Bairro', 'Visualizações', ['label' => 'Ações', 'no-export' => true, 'width' => 10]];
 
     $list = [];
 
     foreach ($properties as $property) {
-        $list[] = [$property->id, $property->title, $property->type, $property->status, $property->city, $property->neighborhood, $property->views, '<nobr>' . '<a class="btn btn-xs btn-default text-primary mx-1 shadow" title="Editar" href="properties/' . $property->id . '/edit"><i class="fa fa-lg fa-fw fa-pen"></i></a>' . '<a class="btn btn-xs btn-default text-danger mx-1 shadow" title="Excluir" href="properties/destroy/' . $property->id . '" onclick="return confirm(\'Confirma a exclusão deste imóvel?\')"><i class="fa fa-lg fa-fw fa-trash"></i></a>'];
+        $list[] = [$property->id, $property->title, $property->type, $property->sale_price, $property->rent_price, $property->status, $property->city, $property->neighborhood, $property->views, '<nobr>' . '<a class="btn btn-xs btn-default text-primary mx-1 shadow" title="Editar" href="properties/' . $property->id . '/edit"><i class="fa fa-lg fa-fw fa-pen"></i></a>' . '<a class="btn btn-xs btn-default text-danger mx-1 shadow" title="Excluir" href="properties/destroy/' . $property->id . '" onclick="return confirm(\'Confirma a exclusão deste imóvel?\')"><i class="fa fa-lg fa-fw fa-trash"></i></a>'];
     }
 
     $config = [
         'data' => $list,
         'order' => [[0, 'asc']],
-        'columns' => [null, null, null, null, null, null, null, ['orderable' => false]],
+        'columns' => [null, null, null, null, null, null, null, null, null, ['orderable' => false]],
         'language' => ['url' => asset('vendor/datatables/js/pt-BR.json')],
     ];
     @endphp
