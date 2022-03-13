@@ -28,4 +28,10 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('products', ProductController::class);
     });
 });
-Route::get('/', [SiteController::class, 'index'])->name('home');
+
+/** Web Routes */
+Route::get('/', [SiteController::class, 'home'])->name('home');
+Route::get('/quem-somos', [SiteController::class, 'about'])->name('about');
+Route::get('/imoveis', [SiteController::class, 'properties'])->name('properties');
+Route::get('/imovel/{slug}', [SiteController::class, 'property'])->name('property');
+Route::get('/contato', [SiteController::class, 'contact'])->name('contact');

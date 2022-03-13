@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PropertyRequest;
 use App\Models\Property;
+use App\Models\PropertyImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -64,6 +65,7 @@ class PropertyController extends Controller
         if ($property->save()) {
             $property->slug = Str::slug($property->title . '-' . $property->id);
             $property->update();
+
             return redirect()
                 ->route('admin.properties.index')
                 ->with('success', 'Cadastro realizado!');
