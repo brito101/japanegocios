@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AutomotiveController;
 use App\Http\Controllers\Admin\PropertyController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Site\SiteController;
@@ -18,6 +19,9 @@ Route::group(['middleware' => ['auth']], function () {
         /** Properties */
         Route::get('/properties/destroy/{id}', [PropertyController::class, 'destroy']);
         Route::resource('properties', PropertyController::class);
+        /** Automotives */
+        Route::get('/automotives/destroy/{id}', [AutomotiveController::class, 'destroy']);
+        Route::resource('automotives', AutomotiveController::class);
     });
 });
 Route::get('/', [SiteController::class, 'index'])->name('home');

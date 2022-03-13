@@ -14,6 +14,8 @@ class Property extends Model
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
+        'owner',
+        'phone',
         'title',
         'slug',
         'porpouse',

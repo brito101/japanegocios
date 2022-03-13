@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePropertiesTable extends Migration
+class CreateAutomotivesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,25 +13,23 @@ class CreatePropertiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('properties', function (Blueprint $table) {
+        Schema::create('automotives', function (Blueprint $table) {
             $table->id();
             $table->string('owner')->nullable();
             $table->string('phone')->nullable();
             $table->string('title');
             $table->string('slug')->nullable();
-            $table->string('type');
-            $table->string('porpouse');
+            $table->string('category'); //carro, moto etc
+            $table->string('brand'); //marca
+            $table->string('model');
             $table->string('status')->default('active');
             $table->bigInteger('views')->default(0);
             /** pricing and values */
             $table->string('sale_price')->default(0)->nullable();
-            $table->string('rent_price')->default(0)->nullable();
             /** description */
             $table->longText('description')->nullable();
-            $table->integer('area')->default('0');
-            $table->integer('bedrooms')->default('0');
-            $table->integer('bathrooms')->default('0');
-            $table->integer('garage')->default('0');
+            $table->integer('year')->nullable();
+            $table->integer('mileage')->nullable();
             /** address */
             $table->string('zipcode')->nullable();
             $table->string('street')->nullable();
@@ -43,14 +41,8 @@ class CreatePropertiesTable extends Migration
             /** photo */
             $table->string('photo', 100)->nullable();
             /** structure */
-            $table->boolean('planned_furniture')->nullable();
-            $table->boolean('barbecue_grill')->nullable();
-            $table->boolean('wifi')->nullable();
-            $table->boolean('air_conditioning')->nullable();
-            $table->boolean('bar')->nullable();
-            $table->boolean('american_kitchen')->nullable();
-            $table->boolean('office')->nullable();
-            $table->boolean('pool')->nullable();
+            $table->string('gear')->nullable();
+            $table->string('fuel')->nullable();
             /** pattern */
             $table->foreignId('user_id')
                 ->constrained()
@@ -68,6 +60,6 @@ class CreatePropertiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('properties');
+        Schema::dropIfExists('automotives');
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PropertyRequest extends FormRequest
+class AutomotiveRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,15 +26,17 @@ class PropertyRequest extends FormRequest
         return [
             'owner' => 'required|max:100',
             'phone' => 'required|max:100',
-            'title' => 'required|max:100',
-            'type' => 'required',
+            'title' => 'required',
+            'category' => 'required',
+            'brand' => 'required',
+            'model' => 'required',
             'status' => 'required',
-            'porpouse' => 'required',
+            'sale_price' => 'required',
             'description' => 'required',
-            'area' => 'required',
-            'bedrooms' => 'required',
-            'bathrooms' => 'required',
-            'garage' => 'required',
+            'year' => 'required',
+            'mileage' => 'required',
+            'gear' => 'required|max:100',
+            'fuel' => 'required|max:100',
             'zipcode' => 'required|min:8|max:13',
             'street' => 'required|min:3|max:100',
             'number' => 'required|min:1|max:100',

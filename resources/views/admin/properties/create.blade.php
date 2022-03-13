@@ -47,8 +47,23 @@
                                             name="title" value="{{ old('title') }}" required>
                                     </div>
                                     <div class="col-12 col-md-6 form-group px-0 pl-md-2">
-                                        <x-adminlte-input-file name="photo" label="Foto de capa"
+                                        <x-adminlte-input-file name="photo" label="Foto de Capa"
                                             placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 col-md-6 form-group px-0 pr-md-2">
+                                        <label for="owner">Proprietário</label>
+                                        <input type="text" class="form-control" id="owner"
+                                            placeholder="Nome do Proprietário" name="owner" value="{{ old('owner') }}"
+                                            required>
+                                    </div>
+                                    <div class="col-12 col-md-6 form-group px-0 pl-md-2">
+                                        <label for="phone">Telefone para Contato</label>
+                                        <input type="text" class="form-control" id="phone"
+                                            placeholder="Telefone para Contato com o proprietário" name="phone"
+                                            value="{{ old('phone') }}" required>
                                     </div>
                                 </div>
 
@@ -76,8 +91,11 @@
                                             <option value="Rascunho" {{ old('status') == 'Rascunho' ? 'selected' : '' }}>
                                                 Rascunho
                                             </option>
-                                            <option value="Ocupado" {{ old('status') == 'Ocupado' ? 'selected' : '' }}>
-                                                Ocupado
+                                            <option value="Alugado" {{ old('status') == 'Alugado' ? 'selected' : '' }}>
+                                                Alugado
+                                            </option>
+                                            <option value="Vendido" {{ old('status') == 'Vendido' ? 'selected' : '' }}>
+                                                Vendido
                                             </option>
                                         </x-adminlte-select2>
                                     </div>
@@ -158,7 +176,7 @@
                                             name="bathrooms" value="{{ old('bathrooms') }}" required>
                                     </div>
 
-                                    <div class="col-12 col-md-4 form-group px-0 pr-md-2">
+                                    <div class="col-12 col-md-4 form-group px-0">
                                         <label for="garage">Garagem</label>
                                         <input type="number" class="form-control" id="garage" placeholder="Qtd"
                                             name="garage" value="{{ old('garage') }}" required>
@@ -247,7 +265,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-12 col-md-3 form-group px-0 pr-md-2">
+                                    <div class="col-12 col-md-3 form-group px-0">
                                         <div class="card-body p-2 border rounded">
                                             <input type="checkbox" style="cursor: pointer" id="air_conditioning"
                                                 name="air_conditioning"
@@ -285,7 +303,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-12 col-md-3 form-group px-0 pr-md-2">
+                                    <div class="col-12 col-md-3 form-group px-0">
                                         <div class="card-body p-2 border rounded">
                                             <input type="checkbox" style="cursor: pointer" id="pool" name="pool"
                                                 {{ old('pool') == 'on' || old('pool') == true ? 'checked' : '' }}>

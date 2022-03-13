@@ -277,6 +277,24 @@ return [
                 ],
             ],
         ],
+        /** Automotives */
+        [
+            'text'        => 'Automóveis',
+            'url'         => '#',
+            'icon'        => 'fas fa-fw fa-car',
+            'submenu' => [
+                [
+                    'text' => 'Listagem de Automóveis',
+                    'url'  => 'admin/automotives',
+                    'icon' => 'fas fa-fw fa-chevron-right',
+                ],
+                [
+                    'text' => 'Cadastro de Automóvel',
+                    'url'  => 'admin/automotives/create',
+                    'icon' => 'fas fa-fw fa-chevron-right',
+                ],
+            ],
+        ],
     ],
 
     /*
