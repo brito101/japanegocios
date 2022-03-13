@@ -51,16 +51,85 @@
                                     </div>
 
                                     <div class="col-12 col-md-6 form-group px-0 pl-md-2 d-flex flex-wrap">
-                                        <div class="{{ $property->photo != null ? 'col-md-9' : 'col-md-12' }} px-0">
-                                            <x-adminlte-input-file name="photo" label="Foto de Capa"
+                                        <div class="{{ $property->photo_0 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_0" label="Foto de Capa"
                                                 placeholder="Selecione uma imagem..." legend="Selecionar" />
                                         </div>
 
-                                        @if ($property->photo != null)
+                                        @if ($property->photo_0 != null)
                                             <div
                                                 class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
-                                                <img src="{{ url('storage/properties/' . $property->photo) }}"
-                                                    alt="{{ $property->photo }}" style="max-width: 80%;"
+                                                <img src="{{ url('storage/properties/' . $property->photo_0) }}"
+                                                    alt="{{ $property->photo_0 }}" style="max-width: 80%;"
+                                                    class="img-thumbnail d-block">
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 col-md-6 form-group px-0 pr-md-2 d-flex flex-wrap">
+                                        <div class="{{ $property->photo_1 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_1" label="Imagem 1 "
+                                                placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                        </div>
+
+                                        @if ($property->photo_1 != null)
+                                            <div
+                                                class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
+                                                <img src="{{ url('storage/properties/' . $property->photo_1) }}"
+                                                    alt="{{ $property->photo_1 }}" style="max-width: 80%;"
+                                                    class="img-thumbnail d-block">
+                                            </div>
+                                        @endif
+                                    </div>
+
+                                    <div class="col-12 col-md-6 form-group px-0 pl-md-2 d-flex flex-wrap">
+                                        <div class="{{ $property->photo_2 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_2" label="Imagem 2"
+                                                placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                        </div>
+
+                                        @if ($property->photo_2 != null)
+                                            <div
+                                                class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
+                                                <img src="{{ url('storage/properties/' . $property->photo_2) }}"
+                                                    alt="{{ $property->photo_2 }}" style="max-width: 80%;"
+                                                    class="img-thumbnail d-block">
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 col-md-6 form-group px-0 pr-md-2 d-flex flex-wrap">
+                                        <div class="{{ $property->photo_3 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_3" label="Imagem 3"
+                                                placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                        </div>
+
+                                        @if ($property->photo_3 != null)
+                                            <div
+                                                class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
+                                                <img src="{{ url('storage/properties/' . $property->photo_3) }}"
+                                                    alt="{{ $property->photo_3 }}" style="max-width: 80%;"
+                                                    class="img-thumbnail d-block">
+                                            </div>
+                                        @endif
+                                    </div>
+
+                                    <div class="col-12 col-md-6 form-group px-0 pl-md-2 d-flex flex-wrap">
+                                        <div class="{{ $property->photo_4 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_4" label="Imagem 4"
+                                                placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                        </div>
+
+                                        @if ($property->photo_4 != null)
+                                            <div
+                                                class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
+                                                <img src="{{ url('storage/properties/' . $property->photo_4) }}"
+                                                    alt="{{ $property->photo_4 }}" style="max-width: 80%;"
                                                     class="img-thumbnail d-block">
                                             </div>
                                         @endif

@@ -44,18 +44,20 @@ class AutomotiveController extends Controller
         $data = $request->all();
         $data['user_id'] = Auth::user()->id;
 
-        if ($request->hasFile('photo') && $request->file('photo')->isValid()) {
-            $name = Str::slug(mb_substr($data['title'], 0, 100)) . time();
-            $extenstion = $request->photo->extension();
-            $nameFile = "{$name}.{$extenstion}";
-            $data['photo'] = $nameFile;
-            $upload = $request->photo->storeAs('automotives', $nameFile);
+        for ($i = 0; $i <= 5; $i++) {
+            if ($request->hasFile('photo_' . $i) && $request->file('photo_' . $i)->isValid()) {
+                $name = Str::slug(mb_substr($data['title'], 0, 100)) . Str::random(5) . time();
+                $extenstion = $request->{'photo_' . $i}->extension();
+                $nameFile = "{$name}.{$extenstion}";
+                $data['photo_' . $i] = $nameFile;
+                $upload = $request->{'photo_' . $i}->storeAs('automotives', $nameFile);
 
-            if (!$upload) {
-                return redirect()
-                    ->back()
-                    ->withInput()
-                    ->with('error', 'Falha ao fazer o upload da imagem');
+                if (!$upload) {
+                    return redirect()
+                        ->back()
+                        ->withInput()
+                        ->with('error', 'Falha ao fazer o upload da imagem');
+                }
             }
         }
 
@@ -110,26 +112,28 @@ class AutomotiveController extends Controller
 
         $data['user_id'] = Auth::user()->id;
 
-        if ($request->hasFile('photo') && $request->file('photo')->isValid()) {
-            $name = Str::slug(mb_substr($data['title'], 0, 10)) . time();
-            $imagePath = storage_path() . '/app/public/automotives/' . $automotive->photo;
+        for ($i = 0; $i <= 5; $i++) {
+            if ($request->hasFile('photo_' . $i) && $request->file('photo_' . $i)->isValid()) {
+                $name = Str::slug(mb_substr($data['title'], 0, 10)) . Str::random(5) . time();
+                $imagePath = storage_path() . '/app/public/automotives/' . $automotive->{'photo_' . $i};
 
-            if (File::isFile($imagePath)) {
-                unlink($imagePath);
+                if (File::isFile($imagePath)) {
+                    unlink($imagePath);
+                }
+
+                $extenstion = $request->{'photo_' . $i}->extension();
+                $nameFile = "{$name}.{$extenstion}";
+
+                $data['photo' . $i] = $nameFile;
+
+                $upload = $request->photo->storeAs('automotives', $nameFile);
+
+                if (!$upload)
+                    return redirect()
+                        ->back()
+                        ->withInput()
+                        ->with('error', 'Falha ao fazer o upload da imagem');
             }
-
-            $extenstion = $request->photo->extension();
-            $nameFile = "{$name}.{$extenstion}";
-
-            $data['photo'] = $nameFile;
-
-            $upload = $request->photo->storeAs('automotives', $nameFile);
-
-            if (!$upload)
-                return redirect()
-                    ->back()
-                    ->withInput()
-                    ->with('error', 'Falha ao fazer o upload da imagem');
         }
 
         if ($automotive->update($data)) {
@@ -157,12 +161,14 @@ class AutomotiveController extends Controller
             abort(403, 'Automóvel inexistente');
         }
 
-        $imagePath = storage_path() . '/app/public/automotives/' . $automotive->photo;
         if ($automotive->delete()) {
-            if (File::isFile($imagePath)) {
-                unlink($imagePath);
-                $automotive->photo = null;
-                $automotive->update();
+            for ($i = 0; $i <= 5; $i++) {
+                $imagePath = storage_path() . '/app/public/automotives/' . $automotive->{'photo_' . $i};
+                if (File::isFile($imagePath)) {
+                    unlink($imagePath);
+                    $automotive->{'photo_' . $i} = null;
+                    $automotive->update();
+                }
             }
 
             return redirect()

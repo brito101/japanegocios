@@ -52,16 +52,85 @@
                                     </div>
 
                                     <div class="col-12 col-md-6 form-group px-0 pl-md-2 d-flex flex-wrap">
-                                        <div class="{{ $automotive->photo != null ? 'col-md-9' : 'col-md-12' }} px-0">
-                                            <x-adminlte-input-file name="photo" label="Foto de Capa"
+                                        <div class="{{ $automotive->photo_0 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_0" label="Foto de Capa"
                                                 placeholder="Selecione uma imagem..." legend="Selecionar" />
                                         </div>
 
-                                        @if ($automotive->photo != null)
+                                        @if ($automotive->photo_0 != null)
                                             <div
                                                 class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
-                                                <img src="{{ url('storage/automotives/' . $automotive->photo) }}"
-                                                    alt="{{ $automotive->photo }}" style="max-width: 80%;"
+                                                <img src="{{ url('storage/automotives/' . $automotive->photo_0) }}"
+                                                    alt="{{ $automotive->photo_0 }}" style="max-width: 80%;"
+                                                    class="img-thumbnail d-block">
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 col-md-6 form-group px-0 pr-md-2 d-flex flex-wrap">
+                                        <div class="{{ $automotive->photo_1 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_1" label="Imagem 1 "
+                                                placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                        </div>
+
+                                        @if ($automotive->photo_1 != null)
+                                            <div
+                                                class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
+                                                <img src="{{ url('storage/automotives/' . $automotive->photo_1) }}"
+                                                    alt="{{ $automotive->photo_1 }}" style="max-width: 80%;"
+                                                    class="img-thumbnail d-block">
+                                            </div>
+                                        @endif
+                                    </div>
+
+                                    <div class="col-12 col-md-6 form-group px-0 pl-md-2 d-flex flex-wrap">
+                                        <div class="{{ $automotive->photo_2 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_2" label="Imagem 2"
+                                                placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                        </div>
+
+                                        @if ($automotive->photo_2 != null)
+                                            <div
+                                                class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
+                                                <img src="{{ url('storage/automotives/' . $automotive->photo_2) }}"
+                                                    alt="{{ $automotive->photo_2 }}" style="max-width: 80%;"
+                                                    class="img-thumbnail d-block">
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 col-md-6 form-group px-0 pr-md-2 d-flex flex-wrap">
+                                        <div class="{{ $automotive->photo_3 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_3" label="Imagem 3"
+                                                placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                        </div>
+
+                                        @if ($automotive->photo_3 != null)
+                                            <div
+                                                class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
+                                                <img src="{{ url('storage/automotives/' . $automotive->photo_3) }}"
+                                                    alt="{{ $automotive->photo_3 }}" style="max-width: 80%;"
+                                                    class="img-thumbnail d-block">
+                                            </div>
+                                        @endif
+                                    </div>
+
+                                    <div class="col-12 col-md-6 form-group px-0 pl-md-2 d-flex flex-wrap">
+                                        <div class="{{ $automotive->photo_4 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_4" label="Imagem 4"
+                                                placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                        </div>
+
+                                        @if ($automotive->photo_4 != null)
+                                            <div
+                                                class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
+                                                <img src="{{ url('storage/automotives/' . $automotive->photo_4) }}"
+                                                    alt="{{ $automotive->photo_4 }}" style="max-width: 80%;"
                                                     class="img-thumbnail d-block">
                                             </div>
                                         @endif

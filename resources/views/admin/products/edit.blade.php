@@ -49,16 +49,85 @@
                                             name="title" value="{{ old('title') ?? $product->title }}" required>
                                     </div>
                                     <div class="col-12 col-md-6 form-group px-0 pl-md-2 d-flex flex-wrap">
-                                        <div class="{{ $product->photo != null ? 'col-md-9' : 'col-md-12' }} px-0">
-                                            <x-adminlte-input-file name="photo" label="Foto de Capa"
+                                        <div class="{{ $product->photo_0 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_0" label="Foto de Capa"
                                                 placeholder="Selecione uma imagem..." legend="Selecionar" />
                                         </div>
 
-                                        @if ($product->photo != null)
+                                        @if ($product->photo_0 != null)
                                             <div
                                                 class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
-                                                <img src="{{ url('storage/products/' . $product->photo) }}"
-                                                    alt="{{ $product->photo }}" style="max-width: 80%;"
+                                                <img src="{{ url('storage/products/' . $product->photo_0) }}"
+                                                    alt="{{ $product->photo_0 }}" style="max-width: 80%;"
+                                                    class="img-thumbnail d-block">
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 col-md-6 form-group px-0 pr-md-2 d-flex flex-wrap">
+                                        <div class="{{ $product->photo_1 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_1" label="Imagem 1 "
+                                                placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                        </div>
+
+                                        @if ($product->photo_1 != null)
+                                            <div
+                                                class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
+                                                <img src="{{ url('storage/products/' . $product->photo_1) }}"
+                                                    alt="{{ $product->photo_1 }}" style="max-width: 80%;"
+                                                    class="img-thumbnail d-block">
+                                            </div>
+                                        @endif
+                                    </div>
+
+                                    <div class="col-12 col-md-6 form-group px-0 pl-md-2 d-flex flex-wrap">
+                                        <div class="{{ $product->photo_2 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_2" label="Imagem 2"
+                                                placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                        </div>
+
+                                        @if ($product->photo_2 != null)
+                                            <div
+                                                class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
+                                                <img src="{{ url('storage/products/' . $product->photo_2) }}"
+                                                    alt="{{ $product->photo_2 }}" style="max-width: 80%;"
+                                                    class="img-thumbnail d-block">
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 col-md-6 form-group px-0 pr-md-2 d-flex flex-wrap">
+                                        <div class="{{ $product->photo_3 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_3" label="Imagem 3"
+                                                placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                        </div>
+
+                                        @if ($product->photo_3 != null)
+                                            <div
+                                                class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
+                                                <img src="{{ url('storage/products/' . $product->photo_3) }}"
+                                                    alt="{{ $product->photo_3 }}" style="max-width: 80%;"
+                                                    class="img-thumbnail d-block">
+                                            </div>
+                                        @endif
+                                    </div>
+
+                                    <div class="col-12 col-md-6 form-group px-0 pl-md-2 d-flex flex-wrap">
+                                        <div class="{{ $product->photo_4 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_4" label="Imagem 4"
+                                                placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                        </div>
+
+                                        @if ($product->photo_4 != null)
+                                            <div
+                                                class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
+                                                <img src="{{ url('storage/products/' . $product->photo_4) }}"
+                                                    alt="{{ $product->photo_4 }}" style="max-width: 80%;"
                                                     class="img-thumbnail d-block">
                                             </div>
                                         @endif

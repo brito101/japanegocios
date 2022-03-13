@@ -19,7 +19,11 @@ class Product extends Model
         'views',
         'sale_price',
         'description',
-        'photo',
+        'photo_0',
+        'photo_1',
+        'photo_2',
+        'photo_3',
+        'photo_4',
         'user_id'
     ];
 }

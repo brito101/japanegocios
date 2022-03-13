@@ -47,7 +47,29 @@
                                             name="title" value="{{ old('title') }}" required>
                                     </div>
                                     <div class="col-12 col-md-6 form-group px-0 pl-md-2">
-                                        <x-adminlte-input-file name="photo" label="Foto de Capa"
+                                        <x-adminlte-input-file name="photo_0" label="Foto de Capa"
+                                            placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 col-md-6 form-group px-0 pr-md-2">
+                                        <x-adminlte-input-file name="photo_1" label="Imagem 1"
+                                            placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                    </div>
+                                    <div class="col-12 col-md-6 form-group px-0 pl-md-2">
+                                        <x-adminlte-input-file name="photo_2" label="Imagem 2"
+                                            placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 col-md-6 form-group px-0 pr-md-2">
+                                        <x-adminlte-input-file name="photo_3" label="Imagem 3"
+                                            placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                    </div>
+                                    <div class="col-12 col-md-6 form-group px-0 pl-md-2">
+                                        <x-adminlte-input-file name="photo_4" label="Imagem 4"
                                             placeholder="Selecione uma imagem..." legend="Selecionar" />
                                     </div>
                                 </div>

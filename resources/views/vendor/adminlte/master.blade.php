@@ -50,10 +50,7 @@
     @yield('adminlte_css')
 
     {{-- Favicon --}}
-
-    <!-- Favicons -->
-    <link href="img/favicon.png" rel="icon">
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{{ asset('img/favicon.png') }}" rel="icon">
 
 </head>
 

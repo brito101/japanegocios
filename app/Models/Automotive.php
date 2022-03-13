@@ -33,7 +33,11 @@ class Automotive extends Model
         'neighborhood',
         'state',
         'city',
-        'photo',
+        'photo_0',
+        'photo_1',
+        'photo_2',
+        'photo_3',
+        'photo_4',
         'gear',
         'fuel',
         'user_id'

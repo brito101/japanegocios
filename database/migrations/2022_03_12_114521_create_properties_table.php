@@ -41,7 +41,11 @@ class CreatePropertiesTable extends Migration
             $table->string('state')->nullable();
             $table->string('city')->nullable();
             /** photo */
-            $table->string('photo', 100)->nullable();
+            $table->string('photo_0', 100)->nullable();
+            $table->string('photo_1', 100)->nullable();
+            $table->string('photo_2', 100)->nullable();
+            $table->string('photo_3', 100)->nullable();
+            $table->string('photo_4', 100)->nullable();
             /** structure */
             $table->boolean('planned_furniture')->nullable();
             $table->boolean('barbecue_grill')->nullable();

@@ -45,18 +45,20 @@ class PropertyController extends Controller
         $data = $request->all();
         $data['user_id'] = Auth::user()->id;
 
-        if ($request->hasFile('photo') && $request->file('photo')->isValid()) {
-            $name = Str::slug(mb_substr($data['title'], 0, 100)) . time();
-            $extenstion = $request->photo->extension();
-            $nameFile = "{$name}.{$extenstion}";
-            $data['photo'] = $nameFile;
-            $upload = $request->photo->storeAs('properties', $nameFile);
+        for ($i = 0; $i <= 5; $i++) {
+            if ($request->hasFile('photo_' . $i) && $request->file('photo_' . $i)->isValid()) {
+                $name = Str::slug(mb_substr($data['title'], 0, 100)) . Str::random(5) . time();
+                $extenstion = $request->{'photo_' . $i}->extension();
+                $nameFile = "{$name}.{$extenstion}";
+                $data['photo_' . $i] = $nameFile;
+                $upload = $request->{'photo_' . $i}->storeAs('properties', $nameFile);
 
-            if (!$upload) {
-                return redirect()
-                    ->back()
-                    ->withInput()
-                    ->with('error', 'Falha ao fazer o upload da imagem');
+                if (!$upload) {
+                    return redirect()
+                        ->back()
+                        ->withInput()
+                        ->with('error', 'Falha ao fazer o upload da imagem');
+                }
             }
         }
 
@@ -121,28 +123,29 @@ class PropertyController extends Controller
         $data['office'] = $request->office == 'on' ? true : false;
         $data['pool'] = $request->pool == 'on' ? true : false;
 
-        if ($request->hasFile('photo') && $request->file('photo')->isValid()) {
-            $name = Str::slug(mb_substr($data['title'], 0, 10)) . time();
-            $imagePath = storage_path() . '/app/public/properties/' . $property->photo;
+        for ($i = 0; $i <= 5; $i++) {
+            if ($request->hasFile('photo_' . $i) && $request->file('photo_' . $i)->isValid()) {
+                $name = Str::slug(mb_substr($data['title'], 0, 10)) . Str::random(5) . time();
+                $imagePath = storage_path() . '/app/public/properties/' . $property->{'photo_' . $i};
 
-            if (File::isFile($imagePath)) {
-                unlink($imagePath);
+                if (File::isFile($imagePath)) {
+                    unlink($imagePath);
+                }
+
+                $extenstion = $request->{'photo_' . $i}->extension();
+                $nameFile = "{$name}.{$extenstion}";
+
+                $data['photo_' . $i] = $nameFile;
+
+                $upload = $request->{'photo_' . $i}->storeAs('properties', $nameFile);
+
+                if (!$upload)
+                    return redirect()
+                        ->back()
+                        ->withInput()
+                        ->with('error', 'Falha ao fazer o upload da imagem');
             }
-
-            $extenstion = $request->photo->extension();
-            $nameFile = "{$name}.{$extenstion}";
-
-            $data['photo'] = $nameFile;
-
-            $upload = $request->photo->storeAs('properties', $nameFile);
-
-            if (!$upload)
-                return redirect()
-                    ->back()
-                    ->withInput()
-                    ->with('error', 'Falha ao fazer o upload da imagem');
         }
-
         if ($property->update($data)) {
             return redirect()
                 ->route('admin.properties.index')
@@ -168,12 +171,14 @@ class PropertyController extends Controller
             abort(403, 'Imóvel inexistente');
         }
 
-        $imagePath = storage_path() . '/app/public/properties/' . $property->photo;
         if ($property->delete()) {
-            if (File::isFile($imagePath)) {
-                unlink($imagePath);
-                $property->photo = null;
-                $property->update();
+            for ($i = 0; $i <= 5; $i++) {
+                $imagePath = storage_path() . '/app/public/properties/' . $property->{'photo_' . $i};
+                if (File::isFile($imagePath)) {
+                    unlink($imagePath);
+                    $property->{'photo_' . $i} = null;
+                    $property->update();
+                }
             }
 
             return redirect()
