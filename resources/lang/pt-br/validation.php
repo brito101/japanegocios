@@ -188,7 +188,19 @@ return [
         'current_password' => 'senha atual',
         'porpouse' => 'propósito',
         'bedrooms' => 'quartos',
-        'photo' => 'foto de capa'
+        'photo' => 'foto',
+        'owner' => 'proprietário',
+        'type' => 'tipo',
+        'area' => 'área',
+        'bathrooms' => 'banheiros',
+        'garage' => 'garagem',
+        'zipcode' => 'CEP',
+        'complement' => 'complemento',
+        'category' => 'categoria',
+        'brand' => 'marca',
+        'model' => 'modelo',
+        'sale_price' => 'preço da venda',
+        'rent_price' => 'preço do aluguel',
     ],
 
 ];

@@ -48,7 +48,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex flex-wrap justify-content-between col-12 align-content-center">
-                                <h3 class="card-title align-self-center">Automóveis Cadastradas</h3>
+                                <h3 class="card-title align-self-center">Automóveis Cadastrados</h3>
                                 <a href="{{ route('admin.automotives.create') }}" title="Novo Imóvel"
                                     class="btn btn-success"><i class="fas fa-fw fa-plus"></i>Novo Automóvel</a>
                             </div>

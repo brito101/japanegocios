@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AutomotiveController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\PropertyController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Site\SiteController;
@@ -22,6 +23,9 @@ Route::group(['middleware' => ['auth']], function () {
         /** Automotives */
         Route::get('/automotives/destroy/{id}', [AutomotiveController::class, 'destroy']);
         Route::resource('automotives', AutomotiveController::class);
+        /** Products */
+        Route::get('/products/destroy/{id}', [ProductController::class, 'destroy']);
+        Route::resource('products', ProductController::class);
     });
 });
 Route::get('/', [SiteController::class, 'index'])->name('home');

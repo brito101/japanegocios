@@ -17,7 +17,7 @@
                     alt="{{ Auth::user()->name }}">
             </div>
             <div class="info">
-                <a href="#" class="d-block"
+                <a href="{{ route('admin.users.edit', ['user' => Auth::user()->id]) }}" class="d-block"
                     title="Editar usuário">{{ Str::words(Auth::user()->name, 1, '') }}</a>
             </div>
         </div>

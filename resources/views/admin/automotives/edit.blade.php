@@ -1,5 +1,5 @@
 @extends('adminlte::page')
-@section('plugins.select2', true)
+@section('plugins.Select2', true)
 @section('plugins.BsCustomFileInput', true)
 @section('plugins.Summernote', true)
 

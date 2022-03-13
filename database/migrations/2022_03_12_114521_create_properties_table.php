@@ -21,7 +21,7 @@ class CreatePropertiesTable extends Migration
             $table->string('slug')->nullable();
             $table->string('type');
             $table->string('porpouse');
-            $table->string('status')->default('active');
+            $table->string('status')->default('Ativo');
             $table->bigInteger('views')->default(0);
             /** pricing and values */
             $table->string('sale_price')->default(0)->nullable();

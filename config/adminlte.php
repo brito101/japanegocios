@@ -188,7 +188,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'admin',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => false,
@@ -295,6 +295,24 @@ return [
                 ],
             ],
         ],
+        /** Products */
+        [
+            'text'        => 'Produtos',
+            'url'         => '#',
+            'icon'        => 'fas fa-fw fa-cart-plus',
+            'submenu' => [
+                [
+                    'text' => 'Listagem de Produtos',
+                    'url'  => 'admin/products',
+                    'icon' => 'fas fa-fw fa-chevron-right',
+                ],
+                [
+                    'text' => 'Cadastro de Produto',
+                    'url'  => 'admin/products/create',
+                    'icon' => 'fas fa-fw fa-chevron-right',
+                ],
+            ],
+        ],
     ],
 
     /*
@@ -353,7 +371,7 @@ return [
             ],
         ],
         'DatatablesPlugins' => [
-            'active' => true,
+            'active' => false,
             'files' => [
                 [
                     'type' => 'js',
@@ -410,22 +428,20 @@ return [
         'Select2' => [
             'active' => false,
             'files' => [
-                'files' => [
-                    [
-                        'type' => 'js',
-                        'asset' => true,
-                        'location' => 'vendor/select2/js/select2.full.min.js',
-                    ],
-                    [
-                        'type' => 'css',
-                        'asset' => true,
-                        'location' => 'vendor/select2/css/select2.min.css',
-                    ],
-                    [
-                        'type' => 'css',
-                        'asset' => true,
-                        'location' => 'vendor/select2-bootstrap4-theme/select2-bootstrap4.min.css',
-                    ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/select2/js/select2.full.min.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/select2/css/select2.min.css',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/select2-bootstrap4-theme/select2-bootstrap4.min.css',
                 ],
             ],
         ],
@@ -449,8 +465,13 @@ return [
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js',
+                    'asset' => true,
+                    'location' => 'vendor/chart.js/Chart.bundle.min.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/chart.js/Chart.min.css',
                 ],
             ],
         ],
