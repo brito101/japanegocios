@@ -14,7 +14,7 @@
                     <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="#">Home</a>
+                                <a href="{{ route('home') }}">Home</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
                                 Quem somos
@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="about-img-box">
-                        <img src="img/slide-about-1.jpg" alt="" class="img-fluid">
+                        <img src="{{ asset('img/slide-about-1.jpg') }}" alt="" class="img-fluid">
                     </div>
                     <div class="sinse-box">
                         <h3 class="sinse-title">HenriqueNegócios

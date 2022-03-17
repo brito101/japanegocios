@@ -48,7 +48,8 @@
                 <div class="col-sm-12 section-t8">
                     <div class="row">
                         <div class="col-md-7">
-                            <form class="form-a contactForm" action="" method="post" role="form">
+                            <form class="form-a contactForm" action="{{ route('sendEmail') }}" method="post" role="form">
+                                @csrf
                                 <div id="sendmessage">
                                     Sua mensagem foi enviada, obrigado.
                                 </div>

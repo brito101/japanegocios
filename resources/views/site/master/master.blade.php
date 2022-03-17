@@ -7,25 +7,26 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Favicons -->
-    <link href="img/favicon.png" rel="icon">
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{{ asset('img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
     <!--  Arquivo Bootstrap CSS File -->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!--  Arquivops Libraries CSS Files -->
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/animate/animate.min.css" rel="stylesheet') }}">
+    <link href="{{ asset('lib/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
 
     <!-- Aqruivo Principal do CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 </head>
 
@@ -39,23 +40,19 @@
         </div>
         <span class="close-box-collapse right-boxed ion-ios-close"></span>
         <div class="box-collapse-wrap form">
-            <form class="form-a">
+            <form class="form-a" action="{{ route('filter') }}" method="post">
+                @csrf
                 <div class="row">
-                    <div class="col-md-12 mb-2">
-                        <div class="form-group">
-                            <label for="Type">Palavra Chave</label>
-                            <input type="text" class="form-control form-control-lg form-control-a"
-                                placeholder="Palavra Chave">
-                        </div>
-                    </div>
                     <div class="col-md-6 mb-2">
                         <div class="form-group">
                             <label for="Type">Tipo de imóvel</label>
-                            <select class="form-control form-control-lg form-control-a" id="Type">
-                                <option>Todos os tipos</option>
-                                <!-- COLOCAR OS TIPOS DE IMOVEIS AUTOMATICAMENTE DE ACORDO COM O TIPO QUE FOR CADASTRADO PELO ADMINISTRADOR NO PAINEL -->
-                                <option>Aluguel</option>
-                                <option>Venda</option>
+                            <select class="form-control form-control-lg form-control-a" id="Type" name="filter_type"
+                                data-index="1" data-action="{{ route('component.main-filter.type') }}">
+                                <option value="Indiferente">Todos os tipos</option>
+                                @foreach ($listTypes as $type)
+                                    <option value="{{ $type }}">{{ $type == 'sale' ? 'Venda' : 'Aluguel' }}
+                                    </option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -63,12 +60,12 @@
                         <div class="form-group">
                             <label for="city">Cidade</label>
                             <!-- COLOCAR AS CIDADES AUTOMATICAMENTE DE ACORDO COM O TIPO QUE FOR CADASTRADO PELO ADMINISTRADOR NO PAINEL -->
-                            <select class="form-control form-control-lg form-control-a" id="city">
-                                <option>Todas as Cidades</option>
-                                <option>Santo André</option>
-                                <option>São Bernado</option>
-                                <option>São Caetano</option>
-                                <option>Mauá</option>
+                            <select class="form-control form-control-lg form-control-a" id="city" name="filter_city"
+                                data-index="2" data-action="{{ route('component.main-filter.city') }}">
+                                <option value="Indiferente">Todas as Cidades</option>
+                                @foreach ($listCities as $city)
+                                    <option value="{{ $city }}">{{ $city }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -76,11 +73,14 @@
                         <div class="form-group">
                             <label for="bedrooms">Quartos</label>
                             <!-- COLOCAR A QUANTIDADE DE QUARTOS AUTOMATICAMENTE DE ACORDO COM O QUE FOR CADASTRADO PELO ADMINISTRADOR NO PAINEL -->
-                            <select class="form-control form-control-lg form-control-a" id="bedrooms">
-                                <option>Qualquer</option>
-                                <option>01</option>
-                                <option>02</option>
-                                <option>03</option>
+                            <select class="form-control form-control-lg form-control-a" id="bedrooms"
+                                name="filter_bedrooms" data-index="3"
+                                data-action="{{ route('component.main-filter.bedrooms') }}">
+                                <option value="Indiferente">Qualquer</option>
+                                @foreach ($listBedrooms as $bedrooms)
+                                    <option value="{{ $bedrooms }}">{{ $bedrooms }}
+                                    </option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -88,12 +88,14 @@
                         <div class="form-group">
                             <label for="garages">Vagas de Garagem</label>
                             <!-- COLOCAR A QUANTIDADE DE VAGAS AUTOMATICAMENTE DE ACORDO COM O QUE FOR CADASTRADO PELO ADMINISTRADOR NO PAINEL -->
-                            <select class="form-control form-control-lg form-control-a" id="garages">
-                                <option>Qualquer</option>
-                                <option>01</option>
-                                <option>02</option>
-                                <option>03</option>
-                                <option>04</option>
+                            <select class="form-control form-control-lg form-control-a" id="garages"
+                                name="filter_garage" data-index="4"
+                                data-action="{{ route('component.main-filter.garage') }}">
+                                <option value="Indiferente">Qualquer</option>
+                                @foreach ($listGarages as $garage)
+                                    <option value="{{ $garage }}">{{ $garage }}
+                                    </option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -101,11 +103,14 @@
                         <div class="form-group">
                             <label for="bathrooms">Banheiros</label>
                             <!-- COLOCAR A QUANTIDADE DE BANHEIROS AUTOMATICAMENTE DE ACORDO COM O QUE FOR CADASTRADO PELO ADMINISTRADOR NO PAINEL -->
-                            <select class="form-control form-control-lg form-control-a" id="bathrooms">
-                                <option>Qualquer</option>
-                                <option>01</option>
-                                <option>02</option>
-                                <option>03</option>
+                            <select class="form-control form-control-lg form-control-a" id="bathrooms"
+                                name="filter_bathrooms" data-index="5"
+                                data-action="{{ route('component.main-filter.bathrooms') }}">
+                                <option value="Indiferente">Qualquer</option>
+                                @foreach ($listBathrooms as $bathrooms)
+                                    <option value="{{ $bathrooms }}">{{ $bathrooms }}
+                                    </option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -113,12 +118,13 @@
                         <div class="form-group">
                             <label for="price"> Preço</label>
                             <!-- COLOCAR OS PREÇOS ENTRE MINIMO E MAXIMO AUTOMATICAMENTE DE ACORDO COM O QUE FOR CADASTRADO PELO ADMINISTRADOR NO PAINEL -->
-                            <select class="form-control form-control-lg form-control-a" id="price">
-                                <option>Qualquer</option>
-                                <option>R$50,000</option>
-                                <option>R$100,000</option>
-                                <option>R$150,000</option>
-                                <option>R$200,000</option>
+                            <select class="form-control form-control-lg form-control-a" id="price" name="filter_price"
+                                data-index="6" data-action="{{ route('component.main-filter.price') }}">
+                                <option value="Indiferente">Qualquer</option>
+                                @foreach ($listPrices as $price)
+                                    <option value="{{ $price }}">{{ $price }}
+                                    </option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -165,9 +171,9 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('properties') }}">Imóveis</a>
-                            <a class="dropdown-item" href="blog-single.html">Carros</a>
-                            <a class="dropdown-item" href="agents-grid.html">Equipe</a>
-                            <a class="dropdown-item" href="agent-single.html">Outros Produtos</a>
+                            <a class="dropdown-item" href="{{ route('automotives') }}">Carros</a>
+                            {{-- <a class="dropdown-item" href="agents-grid.html">Equipe</a> --}}
+                            <a class="dropdown-item" href="{{ route('products') }}">Outros Produtos</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -225,21 +231,23 @@
                                             href="{{ route('properties') }}">Imóveis</a>
                                     </li>
                                     <li class="item-list-a">
-                                        <i class="fa fa-angle-right"></i> <a href="#">Carros</a>
+                                        <i class="fa fa-angle-right"></i> <a
+                                            href="{{ route('automotives') }}">Carros</a>
                                     </li>
                                     <li class="item-list-a">
                                         <i class="fa fa-angle-right"></i> <a
                                             href="{{ route('admin.home') }}">Login</a>
                                     </li>
-                                    <li class="item-list-a">
+                                    {{-- <li class="item-list-a">
                                         <i class="fa fa-angle-right"></i> <a href="#">Corretores</a>
-                                    </li>
+                                    </li> --}}
                                     <li class="item-list-a">
-                                        <i class="fa fa-angle-right"></i> <a href="#">Outros Produtos</a>
+                                        <i class="fa fa-angle-right"></i> <a href="{{ route('products') }}">Outros
+                                            Produtos</a>
                                     </li>
-                                    <li class="item-list-a">
+                                    {{-- <li class="item-list-a">
                                         <i class="fa fa-angle-right"></i> <a href="#">Politica de privacidade</a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </div>
                         </div>
@@ -255,19 +263,19 @@
                     <nav class="nav-footer">
                         <ul class="list-inline">
                             <li class="list-inline-item">
-                                <a href="#">Início</a>
+                                <a href="{{ route('home') }}">Início</a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">Quem somos</a>
+                                <a href="{{ route('about') }}">Quem somos</a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">Imóveis</a>
+                                <a href="{{ route('properties') }}">Imóveis</a>
                             </li>
-                            <li class="list-inline-item">
+                            {{-- <li class="list-inline-item">
                                 <a href="#">Blog</a>
-                            </li>
+                            </li> --}}
                             <li class="list-inline-item">
-                                <a href="#">Contato</a>
+                                <a href="{{ route('contact') }}">Contato</a>
                             </li>
                         </ul>
                     </nav>
@@ -309,18 +317,67 @@
     <div id="preloader"></div>
 
     <!-- JavaScript Libraries -->
-    <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/jquery/jquery-migrate.min.js"></script>
-    <script src="lib/popper/popper.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/scrollreveal/scrollreveal.min.js"></script>
+    <script src="{{ asset('lib/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('lib/jquery/jquery-migrate.min.js') }}"></script>
+    <script src="{{ asset('lib/popper/popper.min.js') }}"></script>
+    <script src="{{ asset('lib/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
+    <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('lib/scrollreveal/scrollreveal.min.js') }}"></script>
     <!-- Contact Form JavaScript File -->
-    <script src="contactform/contactform.js"></script>
+    <script src="{{ asset('contactform/contactform.js') }}"></script>
 
     <!-- Template Main Javascript File -->
-    <script src="js/main.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+
+    <script>
+        $('body').on('change', 'select[name*="filter_"]', function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            var search = $(this);
+            var nextIndex = $(this).data('index') + 1;
+
+            $.post(search.data('action'), {
+                search: search.val()
+            }, function(response) {
+                if (response.status === 'success') {
+                    $('select[data-index="' + nextIndex + '"]').empty();
+                    $.each(response.data, function(key, value) {
+                        $('select[data-index="' + nextIndex + '"]').append(
+                            $('<option>', {
+                                value: value,
+                                text: value
+                            })
+                        );
+                    });
+
+                    $.each($('select[name*="filter_"]'), function(index, element) {
+                        if ($(element).data('index') >= nextIndex + 1) {
+                            $(element).empty().append(
+                                $('<option>', {
+                                    text: 'Selecione o filtro anterior',
+                                    disabled: true
+                                }));
+                        }
+                    });
+                }
+
+                if (response.status === 'fail') {
+                    $.each($('select[name*="filter_"]'), function(index, element) {
+                        if ($(element).data('index') >= nextIndex) {
+                            $(element).empty().append(
+                                $('<option>', {
+                                    text: 'Selecione a opção anterior.'
+                                }));
+                        }
+                    });
+                }
+            }, 'json');
+        });
+    </script>
 
 </body>
 

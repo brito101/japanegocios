@@ -134,7 +134,8 @@ a:hover {
 /*------/ List a /------*/
 
 .list-a {
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
     line-height: 2;
     padding: 0;
     list-style: none;
@@ -142,7 +143,7 @@ a:hover {
 
 .list-a li {
     position: relative;
-    width: 50%;
+    flex-basis: 33%;
     float: left;
     padding-left: 25px;
     padding-right: 5px;

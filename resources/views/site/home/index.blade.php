@@ -4,87 +4,40 @@
     <!--/ Carousel  /-->
     <div class="intro intro-carousel">
         <div id="carousel" class="owl-carousel owl-theme">
-            <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/ft.png)">
-                <!-- INSERIR A IMAGEM DINAMICAMENTE DOS ULTIMOS IMOVEIS ADICIONADOS -->
-                <div class="overlay overlay-a"></div>
-                <div class="intro-content display-table">
-                    <div class="table-cell">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <div class="intro-body">
-                                        <p class="intro-title-top">Santo André, SP
-                                            <!-- COLOCAR O ENDEREÇO DINAMICAMENTE COM A CADASTRADA PELO ADM -->
-                                            <br> 7111
-                                        </p> <!-- Código do imóvel -->
-                                        <h1 class="intro-title mb-4">
-                                            <span class="color-b">204 </span> Av
-                                            <br> Pereira Barreto
-                                        </h1>
-                                        <p class="intro-subtitle intro-price">
-                                            <a href="#"><span class="price-a">Aluguel | $ 1.300</span></a>
-                                        </p>
+            @foreach ($properties->slice(0, 3) as $property)
+                <div class="carousel-item-a intro-item bg-image"
+                    style="background-image: url({{ url('storage/properties/' . $property->photo_0) }})">
+                    <!-- INSERIR A IMAGEM DINAMICAMENTE DOS ULTIMOS IMOVEIS ADICIONADOS -->
+                    <div class="overlay overlay-a"></div>
+                    <div class="intro-content display-table">
+                        <div class="table-cell">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="intro-body">
+                                            <p class="intro-title-top">{{ $property->city }}, {{ $property->state }}
+                                                <br> {{ $property->id }}
+                                            </p> <!-- Código do imóvel -->
+                                            <h1 class="intro-title mb-4">
+                                                <span class="color-b">{{ $property->number }} </span>
+                                                {{ Str::words($property->street, 1, '') }}
+                                                <br>
+                                                {{ Str::words(Str::of($property->street)->after(Str::words($property->street, 1, '')), 2, '') }}
+                                            </h1>
+                                            <p class="intro-subtitle intro-price">
+                                                <a href="{{ route('property', ['slug' => $property->slug]) }}"><span
+                                                        class="price-a">{{ $property->porpouse == 'sale' ? 'Venda' : 'Aluguel' }}
+                                                        |
+                                                        {{ $property->porpouse == 'sale' ? $property->sale_price : $property->rent_price }}</span></a>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/ft.png)">
-                <!-- INSERIR A IMAGEM DINAMICAMENTE DOS ULTIMOS IMOVEIS ADICIONADOS -->
-                <div class="overlay overlay-a"></div>
-                <div class="intro-content display-table">
-                    <div class="table-cell">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <div class="intro-body">
-                                        <p class="intro-title-top">Santo André, SP
-                                            <!-- COLOCAR O ENDEREÇO DINAMICAMENTE COM A CADASTRADA PELO ADM -->
-                                            <br> 7111
-                                        </p> <!-- Código do imóvel -->
-                                        <h1 class="intro-title mb-4">
-                                            <span class="color-b">204 </span> Av
-                                            <br> Pereira Barreto
-                                        </h1>
-                                        <p class="intro-subtitle intro-price">
-                                            <a href="#"><span class="price-a">Aluguel | $ 1.300</span></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/ft.png)">
-                <!-- INSERIR A IMAGEM DINAMICAMENTE DOS ULTIMOS IMOVEIS ADICIONADOS -->
-                <div class="overlay overlay-a"></div>
-                <div class="intro-content display-table">
-                    <div class="table-cell">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <div class="intro-body">
-                                        <p class="intro-title-top">Santo André, SP
-                                            <!-- COLOCAR O ENDEREÇO DINAMICAMENTE COM A CADASTRADA PELO ADM -->
-                                            <br> 7111
-                                        </p> <!-- Código do imóvel -->
-                                        <h1 class="intro-title mb-4">
-                                            <span class="color-b">204 </span> Av
-                                            <br> Pereira Barreto
-                                        </h1>
-                                        <p class="intro-subtitle intro-price">
-                                            <a href="#"><span class="price-a">Aluguel | $ 1.300</span></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
     <!--/ Fim do Carousel /-->
@@ -198,199 +151,64 @@
                 </div>
             </div>
             <div id="property-carousel" class="owl-carousel owl-theme">
-                <div class="carousel-item-b">
-                    <div class="card-box-a card-shadow">
-                        <div class="img-box-a">
-                            <img src="img/ft.png" alt="" class="img-a img-fluid">
-                        </div>
-                        <div class="card-overlay">
-                            <div class="card-overlay-a-content">
-                                <div class="card-header-a">
-                                    <h2 class="card-title-a">
-                                        <a href="property-single.html">144 Avenida
-                                            <br /> Pereira Barreto</a> <!--  DINAMICO -->
-                                    </h2>
-                                </div>
-                                <div class="card-body-a">
-                                    <div class="price-box d-flex">
-                                        <span class="price-a">Aluguel | $ 1.400</span> <!--  DINAMICO -->
-                                    </div>
-                                    <a href="#" class="link-a">Saber mais
-                                        <span class="ion-ios-arrow-forward"></span>
-                                    </a>
-                                </div>
-                                <div class="card-footer-a">
-                                    <ul class="card-info d-flex justify-content-around">
-                                        <li>
-                                            <h4 class="card-info-title">Area</h4> <!--  DINAMICO -->
-                                            <span>80m
-                                                <sup>2</sup>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <h4 class="card-info-title">Quartos</h4> <!--  DINAMICO -->
-                                            <span>2</span>
-                                        </li>
-                                        <li>
-                                            <h4 class="card-info-title">Banheiros</h4> <!--  DINAMICO -->
-                                            <span>1</span>
-                                        </li>
-                                        <li>
-                                            <h4 class="card-info-title">Garagem</h4> <!--  DINAMICO -->
-                                            <span>1</span>
-                                        </li>
-                                    </ul>
-                                </div>
+                @foreach ($properties as $property)
+                    <div class="carousel-item-b">
+                        <div class="card-box-a card-shadow">
+                            <div class="img-box-a">
+                                <img src="{{ url('storage/properties/' . $property->photo_0) }}"
+                                    alt="{{ $property->title }}" class="img-a img-fluid">
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item-b">
-                    <div class="card-box-a card-shadow">
-                        <div class="img-box-a">
-                            <img src="img/ft.png" alt="" class="img-a img-fluid">
-                        </div>
-                        <div class="card-overlay">
-                            <div class="card-overlay-a-content">
-                                <div class="card-header-a">
-                                    <h2 class="card-title-a">
-                                        <a href="property-single.html">144 Avenida
+                            <div class="card-overlay">
+                                <div class="card-overlay-a-content">
+                                    <div class="card-header-a">
+                                        <h2 class="card-title-a">
+                                            <a href="property-single.html">{{ $property->number }}
+                                                Str::words($property->street, 1, '')
+                                                <br />
+                                                {{ Str::words(Str::of($property->street)->after(Str::words($property->street, 1, '')), 2, '') }}</a>
                                             <!--  DINAMICO -->
-                                            <br /> Pereira Barreto
-                                        </a>
-                                    </h2>
-                                </div>
-                                <div class="card-body-a">
-                                    <div class="price-box d-flex">
-                                        <span class="price-a">Aluguel | $ 1.400</span> <!--  DINAMICO -->
+                                        </h2>
                                     </div>
-                                    <a href="#" class="link-a">Saber mais
-                                        <span class="ion-ios-arrow-forward"></span>
-                                    </a>
-                                </div>
-                                <div class="card-footer-a">
-                                    <ul class="card-info d-flex justify-content-around">
-                                        <li>
-                                            <h4 class="card-info-title">Area</h4> <!--  DINAMICO -->
-                                            <span>80m
-                                                <sup>2</sup>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <h4 class="card-info-title">Quartos</h4> <!--  DINAMICO -->
-                                            <span>2</span>
-                                        </li>
-                                        <li>
-                                            <h4 class="card-info-title">Banheiros</h4> <!--  DINAMICO -->
-                                            <span>1</span>
-                                        </li>
-                                        <li>
-                                            <h4 class="card-info-title">Garagem</h4> <!--  DINAMICO -->
-                                            <span>1</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item-b">
-                    <div class="card-box-a card-shadow">
-                        <div class="img-box-a">
-                            <img src="img/ft.png" alt="" class="img-a img-fluid">
-                        </div>
-                        <div class="card-overlay">
-                            <div class="card-overlay-a-content">
-                                <div class="card-header-a">
-                                    <h2 class="card-title-a">
-                                        <a href="property-single.html">144 Avenida
+                                    <div class="card-body-a">
+                                        <div class="price-box d-flex">
+                                            <span
+                                                class="price-a">{{ $property->porpouse == 'sale' ? 'Venda' : 'Aluguel' }}
+                                                |
+                                                {{ $property->porpouse == 'sale' ? $property->sale_price : $property->rent_price }}</span>
                                             <!--  DINAMICO -->
-                                            <br /> Pereira Barreto
+                                        </div>
+                                        <a href="{{ route('property', ['slug' => $property->slug]) }}"
+                                            class="link-a">Saber mais
+                                            <span class="ion-ios-arrow-forward"></span>
                                         </a>
-                                    </h2>
-                                </div>
-                                <div class="card-body-a">
-                                    <div class="price-box d-flex">
-                                        <span class="price-a">Aluguel | $ 1.400</span> <!--  DINAMICO -->
                                     </div>
-                                    <a href="#" class="link-a">Saber mais
-                                        <span class="ion-ios-arrow-forward"></span>
-                                    </a>
-                                </div>
-                                <div class="card-footer-a">
-                                    <ul class="card-info d-flex justify-content-around">
-                                        <li>
-                                            <h4 class="card-info-title">Area</h4> <!--  DINAMICO -->
-                                            <span>80m
-                                                <sup>2</sup>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <h4 class="card-info-title">Quartos</h4> <!--  DINAMICO -->
-                                            <span>2</span>
-                                        </li>
-                                        <li>
-                                            <h4 class="card-info-title">Banheiros</h4> <!--  DINAMICO -->
-                                            <span>1</span>
-                                        </li>
-                                        <li>
-                                            <h4 class="card-info-title">Garagem</h4> <!--  DINAMICO -->
-                                            <span>1</span>
-                                        </li>
-                                    </ul>
+                                    <div class="card-footer-a">
+                                        <ul class="card-info d-flex justify-content-around">
+                                            <li>
+                                                <h4 class="card-info-title">Area</h4> <!--  DINAMICO -->
+                                                <span>{{ $property->area }}m
+                                                    <sup>2</sup>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <h4 class="card-info-title">Quartos</h4> <!--  DINAMICO -->
+                                                <span>{{ $property->bedrooms }}</span>
+                                            </li>
+                                            <li>
+                                                <h4 class="card-info-title">Banheiros</h4> <!--  DINAMICO -->
+                                                <span>{{ $property->bathrooms }}</span>
+                                            </li>
+                                            <li>
+                                                <h4 class="card-info-title">Garagem</h4> <!--  DINAMICO -->
+                                                <span>{{ $property->garage }}</span>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item-b">
-                    <div class="card-box-a card-shadow">
-                        <div class="img-box-a">
-                            <img src="img/ft.png" alt="" class="img-a img-fluid">
-                        </div>
-                        <div class="card-overlay">
-                            <div class="card-overlay-a-content">
-                                <div class="card-header-a">
-                                    <h2 class="card-title-a">
-                                        <a href="property-single.html">144 Avenida
-                                            <br /> Pereira Barreto</a> <!--  DINAMICO -->
-                                    </h2>
-                                </div>
-                                <div class="card-body-a">
-                                    <div class="price-box d-flex">
-                                        <span class="price-a">Aluguel | $ 1.400</span> <!--  DINAMICO -->
-                                    </div>
-                                    <a href="#" class="link-a">Saber mais
-                                        <span class="ion-ios-arrow-forward"></span>
-                                    </a>
-                                </div>
-                                <div class="card-footer-a">
-                                    <ul class="card-info d-flex justify-content-around">
-                                        <li>
-                                            <h4 class="card-info-title">Area</h4> <!--  DINAMICO -->
-                                            <span>80m
-                                                <!--  DINAMICO -->
-                                                <sup>2</sup>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <h4 class="card-info-title">Quartos</h4> <!--  DINAMICO -->
-                                            <span>2</span>
-                                        </li>
-                                        <li>
-                                            <h4 class="card-info-title">Banheiros</h4> <!--  DINAMICO -->
-                                            <span>1</span>
-                                        </li>
-                                        <li>
-                                            <h4 class="card-info-title">Garagem</h4> <!--  DINAMICO -->
-                                            <span>1</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -405,11 +223,11 @@
                         <div class="title-box">
                             <h2 class="title-a">Corretor</h2>
                         </div>
-                        <div class="title-link">
+                        {{-- <div class="title-link">
                             <a href="agents-grid.html">Todos os corretores
                                 <span class="ion-ios-arrow-forward"></span>
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

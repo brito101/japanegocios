@@ -7,21 +7,24 @@
             <div class="row">
                 <div class="col-md-12 col-lg-8">
                     <div class="title-single-box">
-                        <h1 class="title-single">144 Avenida</h1>
-                        <span class="color-text-a">Pereira Barrreto, SP</span>
+                        <h1 class="title-single">{{ $property->number }} {{ Str::words($property->street, 1, '') }}
+                        </h1>
+                        <span
+                            class="color-text-a">{{ Str::words(Str::of($property->street)->after(Str::words($property->street, 1, ''))) }},
+                            {{ $property->state }}</span>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-4">
                     <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="index.html">Home</a>
+                                <a href="{{ route('home') }}">Home</a>
                             </li>
                             <li class="breadcrumb-item">
-                                <a href="property-grid.html">Imóveis</a>
+                                <a href="{{ route('properties') }}">Imóveis</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                Sobrado
+                                {{ $property->type }}
                             </li>
                         </ol>
                     </nav>
@@ -38,13 +41,24 @@
                 <div class="col-sm-12">
                     <div id="property-single-carousel" class="owl-carousel owl-arrow gallery-property">
                         <div class="carousel-item-b">
-                            <img src="img/ft.png" alt="">
+                            <img src="{{ url('storage/properties/' . $property->photo_0) }}"
+                                alt="{{ $property->title }}">
                         </div>
                         <div class="carousel-item-b">
-                            <img src="img/ft.png" alt="">
+                            <img src="{{ url('storage/properties/' . $property->photo_1) }}"
+                                alt="{{ $property->title }}">
                         </div>
                         <div class="carousel-item-b">
-                            <img src="img/ft.png" alt="">
+                            <img src="{{ url('storage/properties/' . $property->photo_2) }}"
+                                alt="{{ $property->title }}">
+                        </div>
+                        <div class="carousel-item-b">
+                            <img src="{{ url('storage/properties/' . $property->photo_3) }}"
+                                alt="{{ $property->title }}">
+                        </div>
+                        <div class="carousel-item-b">
+                            <img src="{{ url('storage/properties/' . $property->photo_4) }}"
+                                alt="{{ $property->title }}">
                         </div>
                     </div>
                     <div class="row justify-content-between">
@@ -55,7 +69,11 @@
                                         <span class="ion-money">R$</span>
                                     </div>
                                     <div class="card-title-c align-self-center">
-                                        <h5 class="title-c">2000</h5>
+                                        <h5 class="title-c">
+                                            {{ $property->porpouse == 'sale'
+                                                ? Str::words(Str::of($property->sale_price)->after(Str::words($property->sale_price, 1, '')))
+                                                : Str::words(Str::of($property->rent_price)->after(Str::words($property->rent_price, 1, ''))) }}
+                                        </h5>
                                     </div>
                                 </div>
                             </div>
@@ -71,37 +89,37 @@
                                     <ul class="list">
                                         <li class="d-flex justify-content-between">
                                             <strong>Imóvel ID:</strong>
-                                            <span>1134</span>
+                                            <span>{{ $property->id }}</span>
                                         </li>
                                         <li class="d-flex justify-content-between">
                                             <strong>Endereço:</strong>
-                                            <span>Av. Pereira Barreto 144</span>
+                                            <span>{{ $property->street }} {{ $property->number }}</span>
                                         </li>
                                         <li class="d-flex justify-content-between">
                                             <strong>Tipo</strong>
-                                            <span>Casa</span>
+                                            <span>{{ $property->type }}</span>
                                         </li>
                                         <li class="d-flex justify-content-between">
                                             <strong>Status:</strong>
-                                            <span>Aluguel</span>
+                                            <span>{{ $property->porpouse }}</span>
                                         </li>
                                         <li class="d-flex justify-content-between">
                                             <strong>Area:</strong>
-                                            <span>80m
+                                            <span>{{ $property->area }}m
                                                 <sup>2</sup>
                                             </span>
                                         </li>
                                         <li class="d-flex justify-content-between">
                                             <strong>Quartos:</strong>
-                                            <span>4</span>
+                                            <span>{{ $property->bedrooms }}</span>
                                         </li>
                                         <li class="d-flex justify-content-between">
                                             <strong>Banheiros:</strong>
-                                            <span>2</span>
+                                            <span>{{ $property->bathrooms }}</span>
                                         </li>
                                         <li class="d-flex justify-content-between">
                                             <strong>Garagem:</strong>
-                                            <span>1</span>
+                                            <span>{{ $property->garage }}</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -116,21 +134,7 @@
                                 </div>
                             </div>
                             <div class="property-description">
-                                <p class="description color-text-a">
-                                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-                                    Donec velit
-                                    neque, auctor sit amet
-                                    aliquam vel, ullamcorper sit amet ligula. Cras ultricies ligula sed magna dictum porta.
-                                    Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget
-                                    tincidunt
-                                    nibh pulvinar quam id dui posuere blandit.
-                                </p>
-                                <p class="description color-text-a no-margin">
-                                    Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec rutrum congue leo
-                                    eget
-                                    malesuada. Quisque velit nisi,
-                                    pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada.
-                                </p>
+                                {!! $property->description !!}
                             </div>
                             <div class="row section-t3">
                                 <div class="col-sm-12">
@@ -141,15 +145,14 @@
                             </div>
                             <div class="amenities-list color-text-a">
                                 <ul class="list-a no-margin">
-                                    <li>Móvel Planejado</li>
-                                    <li>Churrasqueira</li>
-                                    <li>Wi-Fi</li>
-                                    <li>Móvel Planejado</li>
-                                    <li>Churrasqueira</li>
-                                    <li>Wi-Fi</li>
-                                    <li>Móvel Planejado</li>
-                                    <li>Churrasqueira</li>
-                                    <li>Wi-Fi</li>
+                                    {!! $property->planned_furniture ? '<li>Móvel Planejado</li>' : '' !!}
+                                    {!! $property->barbecue_grill ? '<li>Churrasqueira</li>' : '' !!}
+                                    {!! $property->wifi ? '<li>Wi-Fi</li>' : '' !!}
+                                    {!! $property->air_conditioning ? '<li>Ar Condicionado</li>' : '' !!}
+                                    {!! $property->bar ? '<li>Bar</li>' : '' !!}
+                                    {!! $property->american_kitchen ? '<li>Cozinha Americana</li>' : '' !!}
+                                    {!! $property->office ? '<li>Escritório</li>' : '' !!}
+                                    {!! $property->pool ? '<li>Piscina</li>' : '' !!}
                                 </ul>
                             </div>
                         </div>
@@ -165,7 +168,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-lg-4">
-                            <img src="img/henr.jpeg" alt="" class="img-fluid">
+                            <img src="{{ asset('img/henr.jpeg') }}" alt="" class="img-fluid">
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="property-agent">
@@ -204,18 +207,26 @@
                         </div>
                         <div class="col-md-12 col-lg-4">
                             <div class="property-contact">
-                                <form class="form-a">
+                                <form class="form-a contactForm" action="{{ route('sendEmail') }}" method="post"
+                                    role="form">
+                                    @csrf
+                                    <div id="sendmessage">
+                                        Sua mensagem foi enviada, obrigado.
+                                    </div>
+                                    <div id="errormessage"></div>
                                     <div class="row">
                                         <div class="col-md-12 mb-1">
                                             <div class="form-group">
                                                 <input type="text" class="form-control form-control-lg form-control-a"
-                                                    id="inputName" placeholder="Nome *" required>
+                                                    id="inputName" placeholder="Nome *" name="name" required>
                                             </div>
                                         </div>
+                                        <input type="hidden" name="subject"
+                                            value="Interesse pelo imóvel ID {{ $property->id }}">
                                         <div class="col-md-12 mb-1">
                                             <div class="form-group">
                                                 <input type="email" class="form-control form-control-lg form-control-a"
-                                                    id="inputEmail1" placeholder="Email *" required>
+                                                    id="inputEmail1" placeholder="Email *" required name="email">
                                             </div>
                                         </div>
                                         <div class="col-md-12 mb-1">
