@@ -98,7 +98,7 @@
                                             <option value="Apartamento"
                                                 {{ old('type') == 'Apartamento' ? 'selected' : '' }}>
                                                 Apartamento</option>
-                                            <option value="Terreno" {{ old('type') == 'Terreno' ? 'selected' : '' }}>title
+                                            <option value="Terreno" {{ old('type') == 'Terreno' ? 'selected' : '' }}>
                                                 Terreno</option>
                                         </x-adminlte-select2>
 

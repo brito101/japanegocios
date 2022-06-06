@@ -8,7 +8,7 @@
                 <div class="col-md-12 col-lg-8">
                     <div class="title-single-box">
                         <h1 class="title-single">Nossos automóveis</h1>
-                        <span class="color-text-a">disponíveis</span>
+                        <span class="color-text-a">Consulte mais em <a href="https://decarmultimarcasabc.com.br/">https://decarmultimarcasabc.com.br/</a></span>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-4">
@@ -45,7 +45,7 @@
                                     <div class="card-header-a">
                                         <h2 class="card-title-a">
                                             <a href="{{ route('automotive', ['slug' => $automotive->slug]) }}">{{ $automotive->number }}
-                                                Str::words($automotive->street, 1, '')
+                                               {{ Str::words($automotive->street, 1, '') }}
                                                 <br />
                                                 {{ Str::words(Str::of($automotive->street)->after(Str::words($automotive->street, 1, '')), 2, '') }}</a>
                                         </h2>

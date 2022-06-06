@@ -8,7 +8,7 @@
                 <div class="col-md-12 col-lg-8">
                     <div class="title-single-box">
                         <h1 class="title-single">Nossos imóveis</h1>
-                        <span class="color-text-a">disponíveis</span>
+                        <span class="color-text-a">Consulte outros em <a href="https://vivanceimoveis.com.br">https://vivanceimoveis.com.br/</a></span>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-4">
@@ -46,7 +46,7 @@
                 @foreach ($properties as $property)
                     <div class="col-md-4" data-porpouse="{{ $property->porpouse }}">
                         <div class="card-box-a card-shadow">
-                            <div class="img-box-a">
+                            <div class="img-box-a" style="height:250px;">
                                 <img src="{{ url('storage/properties/' . $property->photo_0) }}"
                                     alt="{{ $property->title }}" class="img-a img-fluid">
                             </div>
@@ -55,7 +55,7 @@
                                     <div class="card-header-a">
                                         <h2 class="card-title-a">
                                             <a href="{{ route('property', ['slug' => $property->slug]) }}">{{ $property->number }}
-                                                Str::words($property->street, 1, '')
+                                                {{ Str::words($property->street, 1, '') }}
                                                 <br />
                                                 {{ Str::words(Str::of($property->street)->after(Str::words($property->street, 1, '')), 2, '') }}</a>
                                         </h2>

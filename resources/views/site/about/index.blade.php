@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-12 col-lg-8">
                     <div class="title-single-box">
-                        <h1 class="title-single">Um Pouco sobre a nossa tragetória</h1>
+                        <h1 class="title-single"></h1>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-4">
@@ -35,9 +35,9 @@
                         <img src="{{ asset('img/slide-about-1.jpg') }}" alt="" class="img-fluid">
                     </div>
                     <div class="sinse-box">
-                        <h3 class="sinse-title">HenriqueNegócios
+                        <h3 class="sinse-title">JapaNegócios
                             <span></span>
-                            <br> Desde 2017
+                            <br> Desde 2013
                         </h3>
                         <p>Vendas & Negócios</p>
                     </div>

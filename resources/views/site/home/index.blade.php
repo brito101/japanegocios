@@ -163,7 +163,7 @@
                                     <div class="card-header-a">
                                         <h2 class="card-title-a">
                                             <a href="property-single.html">{{ $property->number }}
-                                                Str::words($property->street, 1, '')
+                                                {{ Str::words($property->street, 1, '') }}
                                                 <br />
                                                 {{ Str::words(Str::of($property->street)->after(Str::words($property->street, 1, '')), 2, '') }}</a>
                                             <!--  DINAMICO -->
@@ -241,8 +241,8 @@
                             <div class="card-header-d">
                                 <div class="card-title-d align-self-center">
                                     <h3 class="title-d">
-                                        <a href="agent-single.html" class="link-two">Henrique sobrenome
-                                            <br> ultimonome</a>
+                                        <a href="agent-single.html" class="link-two">Renato Augusto
+                                            <br> Henriques</a>
                                     </h3>
                                 </div>
                             </div>
@@ -252,10 +252,10 @@
                                 </p>
                                 <div class="info-agents color-a">
                                     <p>
-                                        <strong>Whatsapp: </strong> +55 11980260-0988
+                                        <strong>Whatsapp: </strong> <a class="mdin" href="https://wa.me/5511950347162?text=Olá, gostaria de mais informações."> 11 95034 - 7162</a>
                                     </p>
                                     <p>
-                                        <strong>Email: </strong> emaildocliente@gmail.com
+                                        <strong>Email: </strong> henriques.negocios@hotmail.com
                                     </p>
                                 </div>
                             </div>

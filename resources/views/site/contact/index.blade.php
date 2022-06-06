@@ -107,11 +107,11 @@
                                     <div class="icon-box-content">
                                         <p class="mb-1">
                                             Email.
-                                            <span class="color-a">email@gmail.com</span>
+                                            <span class="color-a">henriques.negocios@hotmail.com</span>
                                         </p>
                                         <p class="mb-1">
                                             Telefone.
-                                            <span class="color-a">+55 00 00000 - 0000</span>
+                                            <span class="color-a"><a class="mdin" href="https://wa.me/5511950347162?text=Olá, gostaria de mais informações.">11 95034 - 7162</a></span>
                                         </p>
                                     </div>
                                 </div>
@@ -126,9 +126,9 @@
                                     </div>
                                     <div class="icon-box-content">
                                         <p class="mb-1">
-                                            Endereço da Loja
+                                            Av. Brasília, 314 - Sala 01
                                             <br />
-                                            SP. BR
+                                            Santo André - SP
                                         </p>
                                     </div>
                                 </div>
@@ -145,17 +145,12 @@
                                         <div class="socials-footer">
                                             <ul class="list-inline">
                                                 <li class="list-inline-item">
-                                                    <a href="#" class="link-one">
+                                                    <a href="https://www.facebook.com/renato.augustohenriques" class="link-one">
                                                         <i class="fa fa-facebook" aria-hidden="true"></i>
                                                     </a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#" class="link-one">
-                                                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#" class="link-one">
+                                                    <a href="https://instagram.com/japa_negocios?igshid=YmMyMTA2M2Y=" class="link-one">
                                                         <i class="fa fa-instagram" aria-hidden="true"></i>
                                                     </a>
                                                 </li>

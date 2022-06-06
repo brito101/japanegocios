@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Henrique Negócios</title>
+    <title>Japa Negócios</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Favicons -->
-    <link href="{{ asset('img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('img/favicon.ico') }}" rel="icon">
     <link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -31,6 +31,8 @@
 </head>
 
 <body>
+<a class="mdin" href="https://wa.me/5511950347162?text=Olá, gostaria de mais informações."><div class="wpp"><i class="fa-brands fa-whatsapp"></i></div></a>
+
     <div class="click-closed"></div>
     <!--/ Formulário de pesquisa /-->
     <div class="box-collapse">
@@ -148,7 +150,7 @@
             </button>
             <a class="navbar-brand text-brand" href="{{ route('home') }}"> <img src="img/japa.png" alt=""
                     width="50px">
-                Henrique<span class="color-b">Negócios</span></a>
+                Japa<span class="color-b">Negócios</span></a>
             <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none"
                 data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-expanded="false">
                 <span class="fa fa-search" aria-hidden="true"></span>
@@ -198,21 +200,21 @@
                 <div class="col-sm-12 col-md-4">
                     <div class="widget-a">
                         <div class="w-header-a">
-                            <h3 class="w-title-a text-brand">Henrique Negócios</h3>
+                            <h3 class="w-title-a text-brand">Japa Negócios</h3>
                         </div>
                         <div class="w-body-a">
                             <p class="w-text-a color-text-a">
-                                Há mais de 11 anos no mercado, trazendo sempre os melhores preços, qualidade e
+                                Há mais de 09 anos no mercado, trazendo sempre os melhores preços, qualidade e
                                 responsabilidade em nossos produtos.
                             </p>
                         </div>
                         <div class="w-footer-a">
                             <ul class="list-unstyled">
                                 <li class="color-a">
-                                    <span class="color-text-a">Whatsapp .</span> +55 1100000 - 0000
+                                    <span class="color-text-a">Whatsapp .</span><a class="mdin" href="https://wa.me/5511950347162?text=Olá, gostaria de mais informações."> 11 95034 - 7162</a>
                                 </li>
                                 <li class="color-a">
-                                    <span class="color-text-a">Email .</span> email@gmail.com
+                                    <span class="color-text-a">Email .</span> henriques.negocios@hotmail.com
                                 </li>
                             </ul>
                         </div>
@@ -282,17 +284,12 @@
                     <div class="socials-a">
                         <ul class="list-inline">
                             <li class="list-inline-item">
-                                <a href="#">
+                                <a href="https://www.facebook.com/renato.augustohenriques">
                                     <i class="fa fa-facebook" aria-hidden="true"></i>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
+                                <a href="https://instagram.com/japa_negocios?igshid=YmMyMTA2M2Y=">
                                     <i class="fa fa-instagram" aria-hidden="true"></i>
                                 </a>
                             </li>
@@ -301,7 +298,7 @@
                     <div class="copyright-footer">
                         <p class="copyright color-text-a">
                             &copy; Copyright
-                            <span class="color-a">Henrique Negócios</span> Todos os direitos reservados.
+                            <span class="color-a">Japa Negócios</span> Todos os direitos reservados.
                         </p>
                     </div>
                     <div class="credits">
@@ -378,6 +375,7 @@
             }, 'json');
         });
     </script>
+    <script src="https://kit.fontawesome.com/03deb54001.js" crossorigin="anonymous"></script>
 
 </body>
 
