@@ -8,7 +8,8 @@
                 <div class="col-md-12 col-lg-8">
                     <div class="title-single-box">
                         <h1 class="title-single">Nossos imóveis</h1>
-                        <span class="color-text-a">Consulte outros em <a href="https://vivanceimoveis.com.br">https://vivanceimoveis.com.br/</a></span>
+                        <span class="color-text-a">Consulte outros em <a
+                                href="https://vivanceimoveis.com.br">https://vivanceimoveis.com.br/</a></span>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-4">
@@ -54,10 +55,9 @@
                                 <div class="card-overlay-a-content">
                                     <div class="card-header-a">
                                         <h2 class="card-title-a">
-                                            <a href="{{ route('property', ['slug' => $property->slug]) }}">{{ $property->number }}
-                                                {{ Str::words($property->street, 1, '') }}
+                                            <a href="{{ route('property', ['slug' => $property->slug]) }}">{{ $property->neighborhood }}
                                                 <br />
-                                                {{ Str::words(Str::of($property->street)->after(Str::words($property->street, 1, '')), 2, '') }}</a>
+                                                {{ $property->city }}</a>
                                         </h2>
                                     </div>
                                     <div class="card-body-a">

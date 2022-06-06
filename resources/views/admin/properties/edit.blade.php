@@ -137,6 +137,108 @@
                                 </div>
 
                                 <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 col-md-6 form-group px-0 pr-md-2 d-flex flex-wrap">
+                                        <div class="{{ $property->photo_5 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_5" label="Imagem 5"
+                                                placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                        </div>
+
+                                        @if ($property->photo_5 != null)
+                                            <div
+                                                class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
+                                                <img src="{{ url('storage/properties/' . $property->photo_5) }}"
+                                                    alt="{{ $property->photo_5 }}" style="max-width: 80%;"
+                                                    class="img-thumbnail d-block">
+                                            </div>
+                                        @endif
+                                    </div>
+
+                                    <div class="col-12 col-md-6 form-group px-0 pl-md-2 d-flex flex-wrap">
+                                        <div class="{{ $property->photo_6 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_6" label="Imagem 6"
+                                                placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                        </div>
+
+                                        @if ($property->photo_6 != null)
+                                            <div
+                                                class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
+                                                <img src="{{ url('storage/properties/' . $property->photo_6) }}"
+                                                    alt="{{ $property->photo_6 }}" style="max-width: 80%;"
+                                                    class="img-thumbnail d-block">
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 col-md-6 form-group px-0 pr-md-2 d-flex flex-wrap">
+                                        <div class="{{ $property->photo_7 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_7" label="Imagem 7"
+                                                placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                        </div>
+
+                                        @if ($property->photo_3 != null)
+                                            <div
+                                                class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
+                                                <img src="{{ url('storage/properties/' . $property->photo_7) }}"
+                                                    alt="{{ $property->photo_7 }}" style="max-width: 80%;"
+                                                    class="img-thumbnail d-block">
+                                            </div>
+                                        @endif
+                                    </div>
+
+                                    <div class="col-12 col-md-6 form-group px-0 pl-md-2 d-flex flex-wrap">
+                                        <div class="{{ $property->photo_8 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_8" label="Imagem 8"
+                                                placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                        </div>
+
+                                        @if ($property->photo_8 != null)
+                                            <div
+                                                class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
+                                                <img src="{{ url('storage/properties/' . $property->photo_8) }}"
+                                                    alt="{{ $property->photo_8 }}" style="max-width: 80%;"
+                                                    class="img-thumbnail d-block">
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 col-md-6 form-group px-0 pr-md-2 d-flex flex-wrap">
+                                        <div class="{{ $property->photo_9 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_9" label="Imagem 9"
+                                                placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                        </div>
+
+                                        @if ($property->photo_9 != null)
+                                            <div
+                                                class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
+                                                <img src="{{ url('storage/properties/' . $property->photo_9) }}"
+                                                    alt="{{ $property->photo_9 }}" style="max-width: 80%;"
+                                                    class="img-thumbnail d-block">
+                                            </div>
+                                        @endif
+                                    </div>
+
+                                    <div class="col-12 col-md-6 form-group px-0 pl-md-2 d-flex flex-wrap">
+                                        <div class="{{ $property->photo_10 != null ? 'col-md-9' : 'col-md-12' }} px-0">
+                                            <x-adminlte-input-file name="photo_10" label="Imagem 10"
+                                                placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                        </div>
+
+                                        @if ($property->photo_10 != null)
+                                            <div
+                                                class='col-12 col-md-3 align-self-center mt-3 d-flex justify-content-center justify-content-md-end px-0'>
+                                                <img src="{{ url('storage/properties/' . $property->photo_10) }}"
+                                                    alt="{{ $property->photo_10 }}" style="max-width: 80%;"
+                                                    class="img-thumbnail d-block">
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-wrap justify-content-between">
                                     <div class="col-12 col-md-6 form-group px-0 pr-md-2">
                                         <label for="owner">Proprietário</label>
                                         <input type="text" class="form-control" id="owner"
@@ -205,7 +307,7 @@
                                                 Aluguel
                                             </option>
                                             <option value="occupied"
-                                                {{ old('porpouse') == 'Venda ou Aluguel'? 'selected': ($property->porpouse == 'Venda ou Aluguel'? 'selected': '') }}>
+                                                {{ old('porpouse') == 'Venda ou Aluguel' ? 'selected' : ($property->porpouse == 'Venda ou Aluguel' ? 'selected' : '') }}>
                                                 Venda ou Aluguel
                                             </option>
                                         </x-adminlte-select2>
@@ -327,8 +429,8 @@
                                 <div class="d-flex flex-wrap justify-content-between">
                                     <div class="col-12 col-md-6 form-group px-0 pr-md-2">
                                         <label for="city">Cidade</label>
-                                        <input type="text" class="form-control" id="city" placeholder="Cidade" name="city"
-                                            value="{{ old('city') ?? $property->city }}" required>
+                                        <input type="text" class="form-control" id="city" placeholder="Cidade"
+                                            name="city" value="{{ old('city') ?? $property->city }}" required>
                                     </div>
                                 </div>
 
@@ -337,7 +439,7 @@
                                         <div class="card-body p-2 border rounded">
                                             <input type="checkbox" style="cursor: pointer" id="planned_furniture"
                                                 name="planned_furniture"
-                                                {{ old('planned_furniture') == 'on' || old('planned_furniture') == true? 'checked': ($property->planned_furniture == 1 || $property->planned_furniture == true? 'checked': '') }}>
+                                                {{ old('planned_furniture') == 'on' || old('planned_furniture') == true ? 'checked' : ($property->planned_furniture == 1 || $property->planned_furniture == true ? 'checked' : '') }}>
                                             <label for="planned_furniture" class="my-0 ml-2">Móveis Planejados</label>
                                         </div>
                                     </div>
@@ -345,7 +447,7 @@
                                         <div class="card-body p-2 border rounded">
                                             <input type="checkbox" style="cursor: pointer" id="barbecue_grill"
                                                 name="barbecue_grill"
-                                                {{ old('barbecue_grill') == 'on' || old('barbecue_grill') == true? 'checked': ($property->barbecue_grill == 1 || $property->barbecue_grill == true? 'checked': '') }}>
+                                                {{ old('barbecue_grill') == 'on' || old('barbecue_grill') == true ? 'checked' : ($property->barbecue_grill == 1 || $property->barbecue_grill == true ? 'checked' : '') }}>
                                             <label for="barbecue_grill" class="my-0 ml-2">Churrasqueira</label>
                                         </div>
                                     </div>
@@ -353,7 +455,7 @@
                                     <div class="col-12 col-md-3 form-group px-0 pr-md-2">
                                         <div class="card-body p-2 border rounded">
                                             <input type="checkbox" style="cursor: pointer" id="wifi" name="wifi"
-                                                {{ old('wifi') == 'on' || old('wifi') == true? 'checked': ($property->wifi == 1 || $property->wifi == true? 'checked': '') }}>
+                                                {{ old('wifi') == 'on' || old('wifi') == true ? 'checked' : ($property->wifi == 1 || $property->wifi == true ? 'checked' : '') }}>
                                             <label for="wifi" class="my-0 ml-2">Wi-Fi</label>
                                         </div>
                                     </div>
@@ -362,7 +464,7 @@
                                         <div class="card-body p-2 border rounded">
                                             <input type="checkbox" style="cursor: pointer" id="air_conditioning"
                                                 name="air_conditioning"
-                                                {{ old('air_conditioning') == 'on' || old('air_conditioning') == true? 'checked': ($property->air_conditioning == 1 || $property->air_conditioning == true? 'checked': '') }}>
+                                                {{ old('air_conditioning') == 'on' || old('air_conditioning') == true ? 'checked' : ($property->air_conditioning == 1 || $property->air_conditioning == true ? 'checked' : '') }}>
                                             <label for="air_conditioning" class="my-0 ml-2">Ar Condicionado</label>
                                         </div>
                                     </div>
@@ -370,7 +472,7 @@
                                     <div class="col-12 col-md-3 form-group px-0 pr-md-2">
                                         <div class="card-body p-2 border rounded">
                                             <input type="checkbox" style="cursor: pointer" id="bar" name="bar"
-                                                {{ old('bar') == 'on' || old('bar') == true? 'checked': ($property->bar == 1 || $property->bar == true? 'checked': '') }}>
+                                                {{ old('bar') == 'on' || old('bar') == true ? 'checked' : ($property->bar == 1 || $property->bar == true ? 'checked' : '') }}>
                                             <label for="bar" class="my-0 ml-2">Bar</label>
                                         </div>
                                     </div>
@@ -379,7 +481,7 @@
                                         <div class="card-body p-2 border rounded">
                                             <input type="checkbox" style="cursor: pointer" id="american_kitchen"
                                                 name="american_kitchen"
-                                                {{ old('american_kitchen') == 'on' || old('american_kitchen') == true? 'checked': ($property->planned_furniture == 1 || $property->american_kitchen == true? 'american_kitchen': '') }}>
+                                                {{ old('american_kitchen') == 'on' || old('american_kitchen') == true ? 'checked' : ($property->planned_furniture == 1 || $property->american_kitchen == true ? 'american_kitchen' : '') }}>
                                             <label for="american_kitchen" class="my-0 ml-2">Cozinha Americana</label>
                                         </div>
                                     </div>
@@ -387,7 +489,7 @@
                                     <div class="col-12 col-md-3 form-group px-0 pr-md-2">
                                         <div class="card-body p-2 border rounded">
                                             <input type="checkbox" style="cursor: pointer" id="office" name="office"
-                                                {{ old('office') == 'on' || old('office') == true? 'checked': ($property->office == 1 || $property->office == true? 'checked': '') }}>
+                                                {{ old('office') == 'on' || old('office') == true ? 'checked' : ($property->office == 1 || $property->office == true ? 'checked' : '') }}>
                                             <label for="office" class="my-0 ml-2">Escritório</label>
                                         </div>
                                     </div>
@@ -395,7 +497,7 @@
                                     <div class="col-12 col-md-3 form-group px-0">
                                         <div class="card-body p-2 border rounded">
                                             <input type="checkbox" style="cursor: pointer" id="pool" name="pool"
-                                                {{ old('pool') == 'on' || old('pool') == true? 'checked': ($property->pool == 1 || $property->pool == true? 'checked': '') }}>
+                                                {{ old('pool') == 'on' || old('pool') == true ? 'checked' : ($property->pool == 1 || $property->pool == true ? 'checked' : '') }}>
                                             <label for="pool" class="my-0 ml-2">Piscina</label>
                                         </div>
                                     </div>

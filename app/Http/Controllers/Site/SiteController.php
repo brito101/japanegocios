@@ -187,6 +187,8 @@ class SiteController extends Controller
 
         $property = Property::where('slug', $slug)->first();
         if ($property->id) {
+            $property->views += 1;
+            $property->update();
             return view('site.properties.single', compact(
                 'property',
                 'listTypes',
@@ -285,6 +287,8 @@ class SiteController extends Controller
 
         $automotive = Automotive::where('slug', $slug)->first();
         if ($automotive->id) {
+            $automotive->views += 1;
+            $automotive->update();
             return view('site.automotives.single', compact(
                 'automotive',
                 'listTypes',
@@ -383,6 +387,8 @@ class SiteController extends Controller
 
         $product = Product::where('slug', $slug)->first();
         if ($product->id) {
+            $product->views += 1;
+            $product->update();
             return view('site.products.single', compact(
                 'product',
                 'listTypes',

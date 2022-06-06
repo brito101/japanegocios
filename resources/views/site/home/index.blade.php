@@ -19,10 +19,9 @@
                                                 <br> {{ $property->id }}
                                             </p> <!-- Código do imóvel -->
                                             <h1 class="intro-title mb-4">
-                                                <span class="color-b">{{ $property->number }} </span>
-                                                {{ Str::words($property->street, 1, '') }}
+                                                <span class="color-b">{{ $property->neighborhood }} </span>
                                                 <br>
-                                                {{ Str::words(Str::of($property->street)->after(Str::words($property->street, 1, '')), 2, '') }}
+                                                {{ $property->city }}
                                             </h1>
                                             <p class="intro-subtitle intro-price">
                                                 <a href="{{ route('property', ['slug' => $property->slug]) }}"><span
@@ -162,10 +161,9 @@
                                 <div class="card-overlay-a-content">
                                     <div class="card-header-a">
                                         <h2 class="card-title-a">
-                                            <a href="property-single.html">{{ $property->number }}
-                                                {{ Str::words($property->street, 1, '') }}
+                                            <a href="{{ route('property', ['slug' => $property->slug]) }}">{{ $property->neighborhood }}
                                                 <br />
-                                                {{ Str::words(Str::of($property->street)->after(Str::words($property->street, 1, '')), 2, '') }}</a>
+                                                {{ $property->city }}</a>
                                             <!--  DINAMICO -->
                                         </h2>
                                     </div>
@@ -252,7 +250,9 @@
                                 </p>
                                 <div class="info-agents color-a">
                                     <p>
-                                        <strong>Whatsapp: </strong> <a class="mdin" href="https://wa.me/5511950347162?text=Olá, gostaria de mais informações."> 11 95034 - 7162</a>
+                                        <strong>Whatsapp: </strong> <a class="mdin"
+                                            href="https://wa.me/5511950347162?text=Olá, gostaria de mais informações."> 11
+                                            95034 - 7162</a>
                                     </p>
                                     <p>
                                         <strong>Email: </strong> henriques.negocios@hotmail.com

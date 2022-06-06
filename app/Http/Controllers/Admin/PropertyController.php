@@ -45,7 +45,7 @@ class PropertyController extends Controller
         $data = $request->all();
         $data['user_id'] = Auth::user()->id;
 
-        for ($i = 0; $i <= 5; $i++) {
+        for ($i = 0; $i <= 10; $i++) {
             if ($request->hasFile('photo_' . $i) && $request->file('photo_' . $i)->isValid()) {
                 $name = Str::slug(mb_substr($data['title'], 0, 100)) . Str::random(5) . time();
                 $extenstion = $request->{'photo_' . $i}->extension();
@@ -123,7 +123,7 @@ class PropertyController extends Controller
         $data['office'] = $request->office == 'on' ? true : false;
         $data['pool'] = $request->pool == 'on' ? true : false;
 
-        for ($i = 0; $i <= 5; $i++) {
+        for ($i = 0; $i <= 10; $i++) {
             if ($request->hasFile('photo_' . $i) && $request->file('photo_' . $i)->isValid()) {
                 $name = Str::slug(mb_substr($data['title'], 0, 10)) . Str::random(5) . time();
                 $imagePath = storage_path() . '/app/public/properties/' . $property->{'photo_' . $i};
@@ -172,7 +172,7 @@ class PropertyController extends Controller
         }
 
         if ($property->delete()) {
-            for ($i = 0; $i <= 5; $i++) {
+            for ($i = 0; $i <= 10; $i++) {
                 $imagePath = storage_path() . '/app/public/properties/' . $property->{'photo_' . $i};
                 if (File::isFile($imagePath)) {
                     unlink($imagePath);

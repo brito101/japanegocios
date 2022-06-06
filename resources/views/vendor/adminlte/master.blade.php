@@ -50,7 +50,7 @@
     @yield('adminlte_css')
 
     {{-- Favicon --}}
-    <link href="{{ asset('img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('img/japa.png') }}" rel="icon">
 
 </head>
 

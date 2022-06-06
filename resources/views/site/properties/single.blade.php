@@ -7,10 +7,9 @@
             <div class="row">
                 <div class="col-md-12 col-lg-8">
                     <div class="title-single-box">
-                        <h1 class="title-single">{{ $property->number }} {{ Str::words($property->street, 1, '') }}
+                        <h1 class="title-single">{{ $property->neighborhood }}
                         </h1>
-                        <span
-                            class="color-text-a">{{ Str::words(Str::of($property->street)->after(Str::words($property->street, 1, ''))) }},
+                        <span class="color-text-a">{{ $property->city }},
                             {{ $property->state }}</span>
                     </div>
                 </div>
@@ -40,26 +39,15 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div id="property-single-carousel" class="owl-carousel owl-arrow gallery-property">
-                        <div class="carousel-item-b">
-                            <img src="{{ url('storage/properties/' . $property->photo_0) }}"
-                                alt="{{ $property->title }}">
-                        </div>
-                        <div class="carousel-item-b">
-                            <img src="{{ url('storage/properties/' . $property->photo_1) }}"
-                                alt="{{ $property->title }}">
-                        </div>
-                        <div class="carousel-item-b">
-                            <img src="{{ url('storage/properties/' . $property->photo_2) }}"
-                                alt="{{ $property->title }}">
-                        </div>
-                        <div class="carousel-item-b">
-                            <img src="{{ url('storage/properties/' . $property->photo_3) }}"
-                                alt="{{ $property->title }}">
-                        </div>
-                        <div class="carousel-item-b">
-                            <img src="{{ url('storage/properties/' . $property->photo_4) }}"
-                                alt="{{ $property->title }}">
-                        </div>
+                        @for ($i = 0; $i <= 10; $i++)
+                            @if ($property->{'photo_' . $i})
+                                <div class="carousel-item-b">
+                                    <img src="{{ url('storage/properties/' . $property->{'photo_' . $i}) }}"
+                                        alt="{{ $property->title }}">
+                                </div>
+                            @endif
+                        @endfor
+
                     </div>
                     <div class="row justify-content-between">
                         <div class="col-md-5 col-lg-4">
@@ -93,7 +81,8 @@
                                         </li>
                                         <li class="d-flex justify-content-between">
                                             <strong>Endereço:</strong>
-                                            <span>{{ $property->street }} {{ $property->number }}</span>
+                                            <span>{{ $property->neighborhood }},
+                                                {{ $property->city }}-{{ $property->state }}</span>
                                         </li>
                                         <li class="d-flex justify-content-between">
                                             <strong>Tipo</strong>
@@ -231,8 +220,7 @@
                                         </div>
                                         <div class="col-md-12 mb-1">
                                             <div class="form-group">
-                                                <textarea id="textMessage" class="form-control" placeholder="Mensagem *" name="message" cols="45" rows="8"
-                                                    required></textarea>
+                                                <textarea id="textMessage" class="form-control" placeholder="Mensagem *" name="message" cols="45" rows="8" required></textarea>
                                             </div>
                                         </div>
                                         <div class="col-md-12">

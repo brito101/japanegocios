@@ -31,7 +31,9 @@
 </head>
 
 <body>
-<a class="mdin" href="https://wa.me/5511950347162?text=Olá, gostaria de mais informações."><div class="wpp"><i class="fa-brands fa-whatsapp"></i></div></a>
+    <a class="mdin" href="https://wa.me/5511950347162?text=Olá, gostaria de mais informações.">
+        <div class="wpp"><i class="fa-brands fa-whatsapp"></i></div>
+    </a>
 
     <div class="click-closed"></div>
     <!--/ Formulário de pesquisa /-->
@@ -148,8 +150,8 @@
                 <span></span>
                 <span></span>
             </button>
-            <a class="navbar-brand text-brand" href="{{ route('home') }}"> <img src="img/japa.png" alt=""
-                    width="50px">
+            <a class="navbar-brand text-brand" href="{{ route('home') }}"> <img src="{{ asset('img/japa.png') }}"
+                    alt="" width="50px">
                 Japa<span class="color-b">Negócios</span></a>
             <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none"
                 data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-expanded="false">
@@ -211,7 +213,9 @@
                         <div class="w-footer-a">
                             <ul class="list-unstyled">
                                 <li class="color-a">
-                                    <span class="color-text-a">Whatsapp .</span><a class="mdin" href="https://wa.me/5511950347162?text=Olá, gostaria de mais informações."> 11 95034 - 7162</a>
+                                    <span class="color-text-a">Whatsapp .</span><a class="mdin"
+                                        href="https://wa.me/5511950347162?text=Olá, gostaria de mais informações."> 11
+                                        95034 - 7162</a>
                                 </li>
                                 <li class="color-a">
                                     <span class="color-text-a">Email .</span> henriques.negocios@hotmail.com

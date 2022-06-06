@@ -76,6 +76,39 @@
 
                                 <div class="d-flex flex-wrap justify-content-between">
                                     <div class="col-12 col-md-6 form-group px-0 pr-md-2">
+                                        <x-adminlte-input-file name="photo_5" label="Imagem 5"
+                                            placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                    </div>
+                                    <div class="col-12 col-md-6 form-group px-0 pl-md-2">
+                                        <x-adminlte-input-file name="photo_6" label="Imagem 6"
+                                            placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 col-md-6 form-group px-0 pr-md-2">
+                                        <x-adminlte-input-file name="photo_7" label="Imagem 7"
+                                            placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                    </div>
+                                    <div class="col-12 col-md-6 form-group px-0 pl-md-2">
+                                        <x-adminlte-input-file name="photo_8" label="Imagem 8"
+                                            placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 col-md-6 form-group px-0 pr-md-2">
+                                        <x-adminlte-input-file name="photo_9" label="Imagem 9"
+                                            placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                    </div>
+                                    <div class="col-12 col-md-6 form-group px-0 pl-md-2">
+                                        <x-adminlte-input-file name="photo_10" label="Imagem 10"
+                                            placeholder="Selecione uma imagem..." legend="Selecionar" />
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="col-12 col-md-6 form-group px-0 pr-md-2">
                                         <label for="owner">Proprietário</label>
                                         <input type="text" class="form-control" id="owner"
                                             placeholder="Nome do Proprietário" name="owner" value="{{ old('owner') }}"
